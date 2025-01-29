@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!--    DEBUT DU HEAD -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fumoir de Pierrick</title>
+    <link href="/Fumoir_vitrine/css/design.css" rel="stylesheet" />
+    <link href="/Fumoir_vitrine/css/lecture.css" rel="stylesheet" />
+    <linkq
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--    END / HEAD -->
+  </head>
+  <body>
+    <!-- Charger le header (navbar et bannière) -->
+    <div id="header-container"></div>
+
+    <script>
+      fetch("/Fumoir_vitrine/includes/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-container").innerHTML = data;
+        })
+        .catch((error) =>
+          console.log("Erreur de chargement du header:", error)
+        );
+    </script>
+    <!-- Charger le header (navbar et bannière) -->
+
+    <!-- HTML ICI  -->
+    <div class="conseil-container">
+      <!-- SI BESOIN DE CARD -->
+      <div class="conseil-card">
+        <h1>Salage</h1>
+        <a href="/Fumoir_vitrine/home_menu/conseils/salage/salage_index.html">
+          <img
+            src="/Fumoir_vitrine/images/conseil-salage.png"
+            alt="Conseil Salage"
+          />
+        </a>
+      </div>
+    </div>
+
+    <!-- Si besoin de ' FORME DE PAGE ' -->
+    <div class="lecture-container">
+      <div class="lecture-content">
+        Ici le texte a tapé pour une forme de page
+      </div>
+    </div>
+
+    <!-- // END / HTML-->
+
+    <!-- Footer -->
+    <footer class="text-center" id="footer">
+      <div class="container">
+        <p class="text-right"><strong>&copy; Pierrick C.</strong></p>
+      </div>
+    </footer>
+    <!-- Fin du Footer -->
+  </body>
+</html>
