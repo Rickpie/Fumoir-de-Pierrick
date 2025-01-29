@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Fumoir de Pierrick</title>
     <link href="/Fumoir_vitrine/css/design.css" rel="stylesheet" />
-    <link href="/Fumoir_vitrine/css/conseil.css" rel="stylesheet" />
     <link href="/Fumoir_vitrine/css/lecture.css" rel="stylesheet" />
     <linkq
       rel="stylesheet"
@@ -25,61 +24,190 @@
     <!--    END / HEAD -->
   </head>
   <body>
-    <!--  NAVIGATION -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container" id="navbar">
-        <div class="navbar-header page-scroll">
-          <button
-            type="button"
-            class="navbar-toggle"
-            data-toggle="collapse"
-            data-target="#collapse-menu"
-          >
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/Fumoir_vitrine/index.html" id="brand"
-            >Le fumoir de Pierrick</a
-          >
-        </div>
-        <div class="collapse navbar-collapse" id="collapse-menu">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="page-scroll">
-              <a href="/Fumoir_vitrine/index.html">Accueil</a>
-            </li>
-            <li class="page-scroll">
-              <a href="/Fumoir_vitrine/home_menu/conseils/conseil_index.html"
-                >Conseils</a
-              >
-            </li>
-            <li class="page-scroll">
-              <a href="/Fumoir_vitrine/home_menu/fumoir/fumoir_index.html"
-                >Fumoir</a
-              >
-            </li>
-            <li class="page-scroll">
-              <a href="/Fumoir_vitrine/home_menu/recettes/recettes_index.html"
-                >Recettes</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <!-- Charger le header (navbar et bannière) -->
+    <div id="header-container"></div>
 
-    <!--  Banniere -->
-    <div class="banniere">
-      <a href="/Fumoir_vitrine/index.html">
-        <img src="images/banniere.png" alt="Banniere" class="img-responsive" />
-      </a>
-    </div>
-    <!--  Fin Banniere-->
-
+    <script>
+      fetch('/Fumoir_vitrine/includes/header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        })
+        .catch(error => console.log('Erreur de chargement du header:', error));
+    </script>
+        <!-- Charger le header (navbar et bannière) -->
     <!-- HTML ICI  -->
+    <div class="lecture-container">
+      <div class="lecture-content">
+          <h1>Le séchage</h1>
+          <p><h2>Présentation des 4 types de séchage courants pour sécher la viande.</h2></p>
+          <hr>
+  
+          <p>
+              Le séchage est la partie du processus qui comporte le plus de risques. Si la viande doit pourrir, c’est à ce moment-là que cela pourrait se produire. Il existe quatre méthodes de séchage : cave, cave à vin, réfrigérateur (grille), et réfrigérateur (torchon).
+              Les quatre méthodes de séchage demandent toutes une grande attention et une surveillance régulière pour éviter un échec. Je vais me concentrer sur les méthodes au frigo, mais je vais aussi résumer les autres.
+          </p>
+  
+          <h3>1. Séchage dans une cave (sans ventilation active)</h3>
+          <ul>
+              <li><strong>Température :</strong> Entre 10°C et 15°C, idéale pour un séchage lent et contrôlé.</li>
+              <li><strong>Humidité :</strong> Relativement élevée, entre 60 % et 75 %, pour éviter que la viande ne sèche trop vite et devienne trop dure à l'extérieur tout en restant humide à l'intérieur.</li>
+              <li><strong>Ventilation :</strong> Légère ventilation (si possible) pour permettre à l'humidité de s’échapper sans risquer un séchage trop rapide.</li>
+              <li><strong>Remarque :</strong> La cave est idéale pour un séchage naturel, mais la ventilation est cruciale pour éviter la moisissure. Il peut être nécessaire d’installer un petit ventilateur ou de suspendre la viande dans un endroit bénéficiant d'un faible courant d'air.</li>
+          </ul>
+  
+          <h3>2. Séchage dans une cave à vin (température contrôlée)</h3>
+          <ul>
+              <li><strong>Température :</strong> Entre 10°C et 12°C, similaire à celle d’une cave, mais la cave à vin offre souvent une température plus stable, ce qui est un avantage pour un séchage homogène.</li>
+              <li><strong>Humidité :</strong> Plus faible que dans une cave classique, autour de 50 % à 65 %. L'humidité plus contrôlée peut prévenir la moisissure et maintenir la viande plus sèche.</li>
+              <li><strong>Ventilation :</strong> Idéale si la cave à vin dispose d’une bonne circulation d'air, permettant à l'humidité de s’évaporer lentement et d'éviter la formation de moisissures.</li>
+              <li><strong>Remarque :</strong> Une cave à vin avec des étagères ajustables est souvent idéale pour suspendre la viande, permettant ainsi un bon flux d’air autour des morceaux.</li>
+          </ul>
+  
+          <!-- Ajout d'autres méthodes, comme le réfrigérateur, si nécessaire -->
+      </div>
+  </div>
+  
+  <div class="lecture-container">
+    <div class="lecture-content">
+        <h1>Séchage au Frigo</h1>
+        <p><h2>Explication des différences entre le séchage avec et sans torchon.</h2></p>
+        <hr>
 
+        <p>
+            Les deux méthodes suivantes sont très similaires : avec torchon et sans torchon.
+        </p>
+
+        <h3>Avec torchon :</h3>
+        <ul>
+            <li><strong>Avantages :</strong>
+                <ul>
+                    <li>Protège la viande des courants d'air et du dessèchement excessif.</li>
+                    <li>Réduit le risque de contamination directe par les bactéries ou moisissures du frigo.</li>
+                </ul>
+            </li>
+            <li><strong>Inconvénients :</strong>
+                <ul>
+                    <li>Peut retenir trop d'humidité, favorisant les moisissures indésirables.</li>
+                    <li>Nécessite de changer régulièrement le torchon pour éviter les odeurs.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Sans torchon :</h3>
+        <ul>
+            <li><strong>Avantages :</strong>
+                <ul>
+                    <li>Meilleure ventilation, favorisant un séchage uniforme.</li>
+                    <li>Moins de risque d'accumulation d'humidité en surface.</li>
+                </ul>
+            </li>
+            <li><strong>Inconvénients :</strong>
+                <ul>
+                    <li>Risque de dessèchement trop rapide ou irrégulier (croûte dure).</li>
+                    <li>Plus exposé aux contaminations du frigo (odeurs, bactéries).</li>
+                </ul>
+            </li>
+        </ul>
+
+        <hr>
+
+        <h3>Le séchage AVEC torchon</h3>
+        <p>
+            Le séchage avec torchon demande de la manutention. Il est impératif de retourner la viande tous les 3 jours maximum (1 jour étant l’idéal) afin d’assurer un séchage uniforme sur toutes les faces. La viande sera posée sur une étagère du frigo, de préférence la plus basse possible, mais il faut éviter le bac à légumes qui est souvent trop humide. Il faut également changer le torchon si celui-ci devient sale.Le principal avantage du séchage avec torchon est la sécurité. Cela permet de protéger la viande contre les risques de contamination dans un frigo familial, comme la chute d’un autre objet. En revanche, le torchon peut retenir l'humidité, augmentant ainsi le risque de moisissures.
+
+            J'ai souvent procédé de cette maniere et je n'ai JAMAIS eu le moindre probleme. Beaucoup de puristes trouvent l'idée du torchon a bannir, cependant quand on ne sait pas le quotidien des gens, il est bon de fournir une solution a tout le monde, que ça ne plaise ou non.
+        </p>
+
+        <h3>Le séchage SANS torchon</h3>
+        <p>
+            Il suffit de poser une grille propre et désinfectée sur l’étagère du frigo et d’y déposer la viande. Il est essentiel d’éviter tout contact avec des emballages ou d’autres aliments. Cette méthode offre l’avantage d’une meilleure visibilité et de plus grande simplicité de contrôle. Le séchage est légèrement plus rapide et se fait de manière plus uniforme. Il est recommandé de procédé ce qui peut éviter beaucoup de complications. 
+            
+        </p>
+
+        <h3>Surveillance du séchage</h3>
+        <p>
+            Dans tous les cas, il est essentiel de surveiller à la fois l’aspect et le poids de la viande. Le séchage au frigo est généralement plus long.
+            Le séchage sur grille nécessite principalement de l'observation et de la patience. En revanche, le séchage dans un torchon implique de le retourner fréquemment, de changer le torchon dès qu'il devient sale et de maintenir un environnement propre pour éviter toute contamination bactérienne.
+        </p>
+
+        <h3>L’entretien des torchons</h3>
+        <p>
+            Pour les torchons, j’utilise des torchons classiques achetés en ligne, que je coupe en deux. Il est impératif de les laver avant utilisation, sans produits qui pourraient altérer le goût de la viande. Je les fais bouillir plusieurs minutes dans un grand volume d’eau avant de les laisser sécher. Il est essentiel que les torchons soient parfaitement secs avant d’être utilisés, car un torchon humide pourrait compromettre le séchage.
+            Personnellement, je ne prends aucun risque : je jette directement le torchon après usage, sans le relaver, pour éviter toute contamination.
+        </p>
+
+        <h3>Procédure résumée</h3>
+        <ol>
+            <li>Une fois la viande roulée dans les épices, j'agrafe un post-it sur de la ficelle de cuisine que je noue autour de la viande afin de noter son poids. Il est important que le post-it ne soit pas en contact avec la viande.</li>
+            <li>Pour le séchage avec torchon, j'enrobe la viande dans les épices, je ferme le torchon avec la viande et les épices à l’intérieur, puis je ficelle l’ensemble comme un rôti. J’agrafe ensuite mon post-it dessus.</li>
+        </ol>
+    </div>
+</div>
+
+<div class="lecture-container">
+  <div class="lecture-content">
+      <h1>En cas de problème</h1>
+      <p><h2> des différents problèmes pouvant être rencontrés lors du séchage.</h2></p>
+      <hr>
+
+      <p>
+          Il peut arriver que la viande pourrisse, mais cela n'est pas forcément perdu. Voici ce qu'il faut faire en cas de signes inquiétants :
+      </p>
+
+      <ul>
+          <li><strong>Odeur désagréable :</strong> Si la viande dégage une forte odeur d'ammoniaque, acide ou de pourriture.</li>
+          <li><strong>Moisissure :</strong> Si de la moisissure verte ou noire apparaît.</li>
+          <li><strong>Texture suspecte :</strong> Si la viande devient molle, visqueuse ou collante.</li>
+      </ul>
+
+      <p>
+          Dans ce cas, il est probable que la viande ait été contaminée par des bactéries. Il ne faut surtout pas prendre de risques et la jeter immédiatement pour éviter toute intoxication alimentaire grave.
+      </p>
+
+      <p>
+          La contamination peut provenir de nombreuses sources : les mains, le frigo, l’air, les ustensiles, la grille utilisée, etc. Il est crucial de désinfecter soigneusement tous les équipements utilisés pour éviter toute contamination future.
+      </p>
+
+      <p>
+          Si de la moisissure blanche apparaît et qu’elle n’a aucune odeur, ce n’est pas grave. Un simple nettoyage avec un torchon légèrement humidifié et une goutte de vinaigre suffira. Cela est généralement dû à un taux d’humidité trop élevé. Retourner la viande devrait résoudre ce problème.
+      </p>
+  </div>
+</div>
+<div class="lecture-container">
+  <div class="lecture-content">
+      <h1>Quand est-ce que le séchage est terminé ?</h1>
+      <p><h2> pour déterminer le moment idéal pour arrêter le séchage.</h2></p>
+      <hr>
+
+      <p>
+          Le séchage de la viande est un processus qui dépend de plusieurs facteurs : la taille et l'épaisseur de la pièce, l'humidité ambiante, la température et la méthode de séchage choisie. Mais il existe quelques signes clés pour savoir quand le séchage est terminé.
+      </p>
+
+      <ul>
+          <li><strong>Texture :</strong> La viande doit avoir une texture ferme au toucher, mais pas trop dure. Elle doit être souple sans être molle, avec une légère élasticité. Si vous pressez la viande entre vos doigts, elle ne doit pas se déformer facilement.</li>
+          <li><strong>Poids :</strong> Le séchage permet d’éliminer l’humidité, et cela se reflète dans la perte de poids de la viande. En général, on s'attend à ce que la viande perde entre 30 à 50 % de son poids initial pendant le processus de séchage. Il est donc utile de peser la viande avant de commencer et à intervalles réguliers pendant le séchage pour suivre cette évolution.</li>
+          <li><strong>Couleur et apparence :</strong> La couleur de la viande doit se stabiliser et devenir plus foncée, avec des bords légèrement plus secs. Si vous observez des zones humides ou de la brillance, cela peut indiquer que la viande n'est pas encore complètement séchée. En revanche, une couleur uniforme et mate est un bon signe que le séchage est terminé.</li>
+          <li><strong>Saveur :</strong> Après le séchage, la viande doit avoir développé une saveur concentrée, avec des arômes profonds et une texture plus dense. Vous pouvez tester la viande en coupant une petite section et en vérifiant la saveur. Si elle a un goût frais ou trop salé, il se peut qu’elle ait besoin de plus de temps.</li>
+          <li><strong>Test du couteau ou de la fourchette :</strong> Un autre moyen simple pour vérifier l’état du séchage est de tenter d'enfoncer une fourchette ou un couteau dans la viande. Si la pointe s'enfonce facilement, c’est un signe que la viande n’a pas encore atteint la bonne consistance. Une fois terminée, la viande devrait offrir une certaine résistance sans être trop difficile à couper.</li>
+      </ul>
+
+      <h3>Conclusion</h3>
+      <p>
+          Le séchage de la viande est une question de patience et d'observation. Une fois que la viande a perdu suffisamment d'humidité, qu'elle est ferme mais encore légèrement souple, qu'elle a perdu de son poids et qu'elle présente une couleur et une saveur développées, elle est prête à être dégustée ou stockée. Ne soyez pas pressé, car un séchage insuffisant peut entraîner une conservation inadéquate et des risques de moisissure. Prenez le temps nécessaire et soyez vigilant lors de chaque étape.
+      </p>
+  </div>
+</div>
+
+
+       
     <!-- // END / HTML-->
+
+    <!-- Boutton BACK-->
+    <div class="return-button-container">
+        <a href="javascript:history.back()" class="return-button">Retour</a>
+    </div>
+    <!-- FIN Boutton BACK-->
 
     <!-- Footer -->
     <footer class="text-center" id="footer">

@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Fumoir de Pierrick</title>
     <link href="/Fumoir_vitrine/css/design.css" rel="stylesheet" />
-    <link href="/Fumoir_vitrine/css/conseil.css" rel="stylesheet" />
     <link href="/Fumoir_vitrine/css/lecture.css" rel="stylesheet" />
-    <linkq
+    <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
     />
@@ -25,59 +24,350 @@
     <!--    END / HEAD -->
   </head>
   <body>
-    <!--  NAVIGATION -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container" id="navbar">
-        <div class="navbar-header page-scroll">
-          <button
-            type="button"
-            class="navbar-toggle"
-            data-toggle="collapse"
-            data-target="#collapse-menu"
-          >
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/Fumoir_vitrine/index.html" id="brand"
-            >Le fumoir de Pierrick</a
-          >
-        </div>
-        <div class="collapse navbar-collapse" id="collapse-menu">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="page-scroll">
-              <a href="/Fumoir_vitrine/index.html">Accueil</a>
-            </li>
-            <li class="page-scroll">
-              <a href="/Fumoir_vitrine/home_menu/conseils/conseil_index.html"
-                >Conseils</a
-              >
-            </li>
-            <li class="page-scroll">
-              <a href="/Fumoir_vitrine/home_menu/fumoir/fumoir_index.html"
-                >Fumoir</a
-              >
-            </li>
-            <li class="page-scroll">
-              <a href="/Fumoir_vitrine/home_menu/recettes/recettes_index.html"
-                >Recettes</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <!-- Charger le header (navbar et bannière) -->
+    <div id="header-container"></div>
 
-    <!--  Banniere -->
-    <div class="banniere">
-      <a href="/Fumoir_vitrine/index.html">
-        <img src="images/banniere.png" alt="Banniere" class="img-responsive" />
-      </a>
-    </div>
-    <!--  Fin Banniere-->
+    <script>
+      fetch("/Fumoir_vitrine/includes/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-container").innerHTML = data;
+        })
+        .catch((error) =>
+          console.log("Erreur de chargement du header:", error)
+        );
+    </script>
+    <!-- Charger le header (navbar et bannière) -->
 
     <!-- HTML ICI  -->
+    <div class="conseil-container">
+      <div class="conseil-card">
+        <h1>Viandes</h1>
+        <a href="/Fumoir_vitrine/home_menu/conseils/salage/salage_index.html">
+          <img
+            src="/Fumoir_vitrine/images/recette-viande.jpg"
+            alt="Conseil Salage"
+          />
+        </a>
+      </div>
+      <div class="conseil-card">
+        <h1>Poissons</h1>
+        <a href="/Fumoir_vitrine/home_menu/conseils/fumage/fumage_index.html">
+          <img
+            src="/Fumoir_vitrine/images/recette-poisson.png"
+            alt="Conseil Fumage"
+          />
+        </a>
+      </div>
+      <div class="conseil-card">
+        <h1>Fromages</h1>
+        <a href="/Fumoir_vitrine/home_menu/conseils/sechage/fromage_index.html">
+          <img
+            src="/Fumoir_vitrine/images/recette-fromage.jpg"
+            alt="Conseil Séchage"
+          />
+        </a>
+      </div>
+    </div>
+
+    <div class="lecture-container">
+      <div class="lecture-content">
+        <h1>Les aliments</h1>
+        <hr />
+        <p>
+          Conseils pour différents types d’aliments afin de tirer le plein
+          potentiel du fumoir.
+        </p>
+
+        <h3>Viandes</h3>
+        <p>Positionnez les grilles parfaitement propres.</p>
+        <ul>
+          <li>
+            Conseil : Disposez la viande en évitant qu'elle soit trop proche les
+            unes des autres, afin que l'air et la fumée puissent circuler
+            librement autour de chaque pièce. Vous pouvez les placer soit sur
+            des crochets, soit sur des grilles, mais à mon avis, les crochets
+            sont le meilleur choix.
+          </li>
+        </ul>
+
+        <h3>Poissons</h3>
+        <ul>
+          <li>Accrochez les poissons à l'aide de crochets.</li>
+          <li>
+            Conseil : Bien que la peau du poisson puisse sembler solide, il est
+            crucial de l'accrocher du côté de la queue, car cette partie est
+            beaucoup plus résistante. Si vous l'accrochez de l'autre côté, il y
+            a un grand risque que la peau se déchire, ce qui pourrait faire
+            tomber le poisson. Cela abîme non seulement le filet, mais peut
+            aussi provoquer une contamination par la graisse qui tombe, et si le
+            poisson reste plusieurs heures au fond sans que vous vous en
+            aperceviez, cela pourrait altérer considérablement le goût, voire
+            rendre le poisson immangeable.
+          </li>
+        </ul>
+
+        <h3>Fromages</h3>
+        <p>
+          De nombreux fromages sont compatibles avec le fumage. Les fromages à
+          pâte ferme ou dure, tels que le cheddar, le gouda, le comté, le
+          parmesan, ou l'emmental, peuvent être fumés sans problème.
+        </p>
+        <ul>
+          <li>
+            Les fromages à pâte plus molle, comme le morbier, la tomme ou le
+            provolone italien, supportent également bien le fumage.
+          </li>
+          <li>
+            Pour ce type de fromage, il est conseillé de les fumer entre 2 et 6
+            heures. Après le fumage, il est idéal de les laisser reposer pendant
+            une bonne semaine pour que les saveurs s'imprègnent bien, bien
+            qu'ils puissent aussi être consommés dès le soir même.
+          </li>
+          <li>
+            Les fromages comme le camembert ou le brie peuvent également être
+            fumés, mais il est préférable d'utiliser des fromages jeunes et
+            encore bien fermes. Le temps de fumage reste similaire, cela dépend
+            des préférences personnelles.
+          </li>
+          <li>
+            Les fromages frais ou très mous, comme le fromage de chèvre, la
+            mozzarella, la ricotta, ou les fromages à tartiner (par exemple, la
+            vache qui rit), ne supportent pas ou mal le fumage.
+          </li>
+          <li>
+            Enfin, les fromages industriels, comme les tranches de fromage à
+            burger, ne tiendront absolument pas.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="lecture-container">
+      <div class="lecture-content">
+        <h1>Divers aliments</h1>
+        <hr />
+        <p>
+          Exemples d’aliments supportant bien le fumage à froid et leurs temps
+          de fumage.
+        </p>
+        <p>
+          Le fumoir ne se limite pas aux viandes, poissons et fromages. Il peut
+          sublimer une grande variété d’aliments souvent méconnus pour le
+          fumage. Voici quelques exemples :
+        </p>
+
+        <h3>Légumes et Champignons</h3>
+        <ul>
+          <li><strong>Légumes :</strong></li>
+          <ul>
+            <li>Tomates (notamment les tomates séchées) : 2 à 3 heures</li>
+            <li>Poivrons : 2 à 4 heures</li>
+            <li>Piments doux ou forts : 2 à 3 heures</li>
+            <li>Oignons : 3 à 4 heures</li>
+            <li>Aubergines : 4 à 6 heures</li>
+          </ul>
+          <p>
+            <strong>Utilisation :</strong> Ces légumes fumés sont parfaits pour
+            des sauces, marinades ou plats mijotés.
+          </p>
+
+          <li><strong>Champignons :</strong></li>
+          <ul>
+            <li>Champignons de Paris, shiitakes, portobellos : 2 à 3 heures</li>
+          </ul>
+          <p>
+            <strong>Avantage :</strong> Leur texture absorbe bien la fumée,
+            ajoutant une saveur terreuse et boisée.
+          </p>
+        </ul>
+
+        <h3>Noix et Graines</h3>
+        <ul>
+          <li>
+            Noix de pécan, amandes, noix de cajou, noisettes : 2 à 3 heures
+          </li>
+          <li>Graines de tournesol, graines de citrouille : 1 à 2 heures</li>
+        </ul>
+        <p>
+          <strong>Utilisation :</strong> Idéal pour les apéritifs ou comme
+          garniture dans des salades.
+        </p>
+
+        <h3>Herbes et Épices</h3>
+        <ul>
+          <li>Thym, romarin, origan : 1 à 2 heures</li>
+          <li>Paprika, piment en poudre : 1 heure</li>
+        </ul>
+        <p>
+          <strong>Atout :</strong> Les herbes et épices fumées apportent une
+          profondeur unique à vos plats.
+        </p>
+
+        <h3>Œufs</h3>
+        <ul>
+          <li><strong>Œufs durs :</strong></li>
+          <ul>
+            <li>
+              Fumés avec leur coquille pour un résultat subtil : 1 à 2 heures
+            </li>
+            <li>Écalés pour une saveur plus prononcée : 1 heure</li>
+          </ul>
+        </ul>
+
+        <h3>Beurre et Huiles</h3>
+        <ul>
+          <li>
+            Beurre : 1 à 2 heures (à basse température pour éviter qu’il fonde).
+          </li>
+          <li>Huiles (comme l’huile d’olive) : 1 à 2 heures.</li>
+        </ul>
+
+        <h3>Céréales et Féculents</h3>
+        <ul>
+          <li>Riz, quinoa, couscous : 2 à 3 heures.</li>
+          <li>Farine : 1 à 2 heures.</li>
+        </ul>
+
+        <h3>Fruits et Fruits secs</h3>
+        <ul>
+          <li>
+            <strong>Fruits frais :</strong> Pommes, poires, figues, raisins
+            secs, prunes : 2 à 3 heures
+          </li>
+          <p>
+            <strong
+              >Parfait pour accompagner des fromages, desserts ou plats
+              sucrés-salés.</strong
+            >
+          </p>
+          <li><strong>Fruits secs :</strong></li>
+          <ul>
+            <li>Dattes et abricots secs : 2 à 3 heures</li>
+            <li>Noix de coco râpée : 1 à 2 heures</li>
+          </ul>
+        </ul>
+
+        <h3>Boissons</h3>
+        <ul>
+          <li>
+            Grains de café ou thé : 30 minutes à 1 heure (arômes subtils).
+          </li>
+          <li>
+            Eaux-de-vie ou spiritueux : 10 à 20 minutes (fumage très léger).
+          </li>
+        </ul>
+
+        <h3>Bonbons et Chocolats</h3>
+        <ul>
+          <li>Chocolat noir ou au lait : 1 à 2 heures.</li>
+          <li>Caramels ou sucres aromatisés : 1 à 2 heures.</li>
+        </ul>
+
+        <h3>Produits transformés</h3>
+        <ul>
+          <li>Saucisses : 2 à 4 heures, selon leur épaisseur.</li>
+          <li>Pain : 2 à 3 heures, idéal pour baguettes ou pains rustiques.</li>
+        </ul>
+
+        <h3>Produits marinés ou saumurés</h3>
+        <ul>
+          <li>Cornichons : 1 à 2 heures, pour une touche légère.</li>
+          <li>Olives : 1 à 2 heures, selon l’intensité souhaitée.</li>
+        </ul>
+
+        <h3>Poissons et Fruits de mer originaux</h3>
+        <ul>
+          <li>Huîtres : 30 minutes à 1 heure, pour un fumage subtil.</li>
+          <li>
+            Pétoncles et crevettes : 1 à 2 heures, pour des apéritifs raffinés.
+          </li>
+        </ul>
+    </div>
+</div>
+    <div class="lecture-container">
+      <div class="lecture-content">
+      <h1>Les épices</h1>
+
+      <h2>Présentation des épices couramment utilisées</h2>
+
+      <p>
+        C’est ici que la partie la plus personnelle du processus entre en jeu.
+        Chacun a ses préférences, mais une règle reste essentielle : peser la
+        viande avant d'ajouter les épices, ce qui sera utile pour le séchage par
+        la suite. Le choix des épices est libre, l’important est d’enrober la
+        viande de manière homogène afin que les saveurs se diffusent bien.
+      </p>
+
+      <p>
+        Prenons l’exemple d’un filet mignon. Si l’on apprécie le thym, il suffit
+        de rouler la viande dedans pour bien la recouvrir. Même principe avec le
+        basilic ou tout autre mélange d’épices. Peu importe votre choix,
+        l’essentiel est de bien imprégner chaque morceau.
+      </p>
+
+      <p>Voici quelques idées pour vous inspirer :</p>
+
+      <ul>
+        <li>
+          <strong>Poivre noir :</strong> Indispensable, il apporte du piquant et
+          relève les autres saveurs.
+        </li>
+        <li>
+          <strong>Paprika :</strong> Doux ou fumé, il ajoute une profondeur
+          subtile et une légère touche de fumé.
+        </li>
+        <li>
+          <strong>Thym :</strong> Idéal pour une saveur herbacée subtile qui se
+          marie bien avec une variété de viandes.
+        </li>
+        <li>
+          <strong>Romarin :</strong> Fort en arôme, il fonctionne
+          particulièrement bien avec des viandes rouges ou du gibier.
+        </li>
+        <li>
+          <strong>Cumin :</strong> Avec son goût terreux et chaud, il s'intègre
+          parfaitement dans des recettes plus épicées.
+        </li>
+        <li>
+          <strong>Coriandre moulue :</strong> Légèrement citronnée et épicée,
+          elle se marie bien avec les saveurs sucrées et salées.
+        </li>
+        <li>
+          <strong>Ail en poudre :</strong> Parfait pour ajouter de la profondeur
+          et une touche savoureuse sans la texture d'ail frais.
+        </li>
+        <li>
+          <strong>Gingembre :</strong> Un zeste de piquant frais, excellent dans
+          des mélanges plus exotiques ou pour des viandes comme le porc.
+        </li>
+        <li>
+          <strong>Moutarde en poudre :</strong> Elle ajoute une note légèrement
+          piquante et de la complexité au goût.
+        </li>
+        <li>
+          <strong>Clous de girofle :</strong> À utiliser avec parcimonie, ils
+          apportent un arôme chaleureux et légèrement sucré.
+        </li>
+        <li>
+          <strong>Cannelle :</strong> Parfaite pour des recettes sucrées-salées
+          ou inspirées par la cuisine méditerranéenne.
+        </li>
+        <li>
+          <strong>Laurier :</strong> Utilisé pour mariner ou en infusion, il
+          ajoute une saveur boisée et légèrement épicée.
+        </li>
+        <li>
+          <strong>Anis étoilé :</strong> Une épice douce et parfumée qui donne
+          une touche asiatique ou méditerranéenne.
+        </li>
+        <li>
+          <strong>Piment de Cayenne :</strong> Pour ceux qui préfèrent les
+          recettes un peu plus épicées, il peut ajouter de la chaleur.
+        </li>
+      </ul>
+    </div>
+</div>
 
     <!-- // END / HTML-->
 

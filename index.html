@@ -1,14 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <!--    DEBUT DU HEAD -->
+    <!-- DEBUT DU HEAD -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Fumoir de Pierrick</title>
     <link href="/Fumoir_vitrine/css/design.css" rel="stylesheet" />
-    <linkq
+    <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
     />
@@ -16,101 +15,55 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!--    END / HEAD -->
   </head>
   <body>
-    <!--  NAVIGATION -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container" id="navbar">
-        <div class="navbar-header page-scroll">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-menu">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/Fumoir_vitrine/index.html" id="brand">Le fumoir de Pierrick</a>
-        </div>
-        <div class="collapse navbar-collapse" id="collapse-menu">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="page-scroll">
-              <a href="/Fumoir_vitrine/index.html">Accueil</a>
-            </li>
-            <li class="page-scroll">
-              <a href="/Fumoir_vitrine/home_menu/conseils/conseil_index.html">Conseils</a>
-            </li>
-            <li class="page-scroll">
-              <a href="/Fumoir_vitrine/home_menu/fumoir/fumoir_index.html">Fumoir</a>
-            </li>
-            <li class="page-scroll">
-              <a href="/Fumoir_vitrine/home_menu/recettes/recettes_index.html">Recettes</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    
-    <!--  Banniere -->
-    <div class="banniere">
-      <a href="/Fumoir_vitrine/index.html">
-        <img src="images/banniere.png" alt="Banniere" class="img-responsive" />
-      </a>
-    </div>
-    <!--  Fin Banniere-->
+    <!-- Charger le header (navbar et bannière) -->
+    <div id="header-container"></div>
 
-    <!-- SECTION SERVICES  -->
-    <section id="section1">
-      <div class="container">
-        <div class="col-lg-12">
-          <h1 class="text-center">Nos services</h1>
-        </div>
-      </div>
-      <div class="card-container">
-        <div class="card bg-dark text-white">
+    <script>
+      fetch('/Fumoir_vitrine/includes/header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        })
+        .catch(error => console.log('Erreur de chargement du header:', error));
+    </script>
+        <!-- Charger le header (navbar et bannière) -->
+    
+    <div class="content-wrapper">
+      <div class="conseil-container">
+        <!-- Card 1 -->
+        <div class="conseil-card">
           <a href="/Fumoir_vitrine/home_menu/conseils/conseil_index.html">
-            <img class="card-img" src="images/conseil.png" alt="Card image" />
+            <img class="conseil-card-img" src="images/conseil.png" alt="Card image" />
           </a>
-          <div class="card-img-overlay">
-            <h5 class="card-title">Mes conseils</h5>
-            <p class="card-text">
-              Retrouver mes différents conseils a propos du Salage, du fumage,
-              du séchage.
-            </p>
+          <div class="conseil-card-overlay">
+            <h1 class="conseil-card-title">Mes conseils</h1>
+            <p><h4>Mes différents conseils à propos du Salage, du fumage, du séchage.</h4></p>
           </div>
         </div>
-        <div class="card bg-dark text-white">
+        <!-- Card 2 -->
+        <div class="conseil-card">
           <a href="/Fumoir_vitrine/home_menu/fumoir/fumoir_index.html">
-            <img class="card-img" src="images/fumoir.jpg" alt="Card image" />
+            <img class="conseil-card-img" src="images/fumoir.jpg" alt="Card image" />
           </a>
-          <div class="card-img-overlay">
-            <h5 class="card-title">Le fumoir</h5>
-            <p class="card-text">
-              Ici je parlerai du fumoir, de sa réalisation DIY, aux ustensiles
-              indespensable, en passant par la sciure.
-            </p>
+          <div class="conseil-card-overlay">
+            <h1 class="conseil-card-title">Le fumoir</h1>
+            <p><h4>Ici je parlerai du fumoir, de sa réalisation DIY, aux ustensiles indispensables, en passant par la sciure.</h4></p>
           </div>
         </div>
-        <div class="card bg-dark text-white">
+        <!-- Card 3 -->
+        <div class="conseil-card">
           <a href="/Fumoir_vitrine/home_menu/recettes/recettes_index.html">
-            <img class="card-img" src="images/recette.png" alt="Card image" />
+            <img class="conseil-card-img" src="images/recette.jpg" alt="Card image" />
           </a>
-          <div class="card-img-overlay">
-            <h5 class="card-title">Idée de recette</h5>
-            <p class="card-text">
-              Retrouvez ici une multitude de recettes, pour de la viande, des
-              poissons, des fromages et beaucoup d'autre aliment que vous
-              pourrez sublimer avec votre fumoir.
-            </p>
+          <div class="conseil-card-overlay">
+            <h1 class="conseil-card-title">Idée de recette</h1>
+            <p><h4>Retrouvez ici une multitude de recettes, pour de la viande, des poissons, des fromages et beaucoup d'autres aliments que vous pourrez sublimer avec votre fumoir.</h4></p>
           </div>
         </div>
       </div>
-    </section>
-    <!-- // END / SECTION SERVICES -->
+    </div>
 
     <!-- Footer -->
     <footer class="text-center" id="footer">
@@ -118,6 +71,5 @@
         <p class="text-right"><strong>&copy; Pierrick C.</strong></p>
       </div>
     </footer>
-    <!-- Fin du Footer -->
   </body>
 </html>

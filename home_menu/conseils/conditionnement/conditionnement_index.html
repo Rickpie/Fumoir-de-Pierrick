@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!--    DEBUT DU HEAD -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fumoir de Pierrick</title>
+    <link href="/Fumoir_vitrine/css/design.css" rel="stylesheet" />
+    <link href="/Fumoir_vitrine/css/lecture.css" rel="stylesheet" />
+    <linkq
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--    END / HEAD -->
+  </head>
+  <body>
+    <!-- Charger le header (navbar et bannière) -->
+    <div id="header-container"></div>
+
+    <script>
+      fetch('/Fumoir_vitrine/includes/header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        })
+        .catch(error => console.log('Erreur de chargement du header:', error));
+    </script>
+        <!-- Charger le header (navbar et bannière) -->
+
+    <!-- HTML ICI  -->
+    <div class="lecture-container">
+        <div class="lecture-content">
+            <h1>Conditionnement des aliments après fumage</h1>
+            <hr>
+            <p>
+                Le conditionnement des aliments après fumage est essentiel pour préserver leur qualité et garantir une conservation optimale. Voici quelques conseils pratiques pour un stockage efficace des viandes et poissons.
+            </p>
+            <h3>Viande :</h3>
+            <ul>
+                <li>La viande peut être stockée sous vide pendant plusieurs mois sans risque de dégradation. Vous pouvez la trancher avant de la mettre sous vide si vous préférez.</li>
+                <li><strong>Astuce :</strong> Sortez la viande du sac sous vide quelques heures avant de la consommer pour permettre aux tranches de retrouver leur forme et de se détacher facilement les unes des autres. Cela permet également à la viande de "respirer" légèrement et de conserver une meilleure texture.</li>
+                <li>La viande peut être congelée, qu'elle soit entière ou tranchée, sans compromettre sa qualité.</li>
+                <li>Certains préfèrent fumer la viande la veille de la servir pour un goût plus frais et prononcé.</li>
+            </ul>
+            <p><strong>Note importante :</strong> Le fait de mettre la viande sous vide interrompt immédiatement le processus de séchage. Ainsi, elle restera telle qu'elle était au moment de l'emballage, ce qui permet de conserver sa saveur et sa texture initiales pendant toute la période de stockage.</p>
+            
+            <h3>Poisson :</h3>
+            <ul>
+                <li>Le poisson peut également être stocké sous vide. Personnellement, je le garde sans problème jusqu’à un mois sous vide, mais il est conseillé de le consommer dans les 3 premières semaines après le fumage pour un goût optimal.</li>
+                <li>Le poisson peut être découpé en portions avant d’être mis sous vide, et vous pouvez aussi le congeler pour une conservation plus longue. Une fois congelé, il reste de bonne qualité pendant plusieurs mois, sans perte notable de saveur ou de texture.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- // END / HTML-->
+
+    <!-- Boutton BACK-->
+    <div class="return-button-container">
+        <a href="javascript:history.back()" class="return-button">Retour</a>
+    </div>
+    <!-- FIN Boutton BACK-->
+
+    <!-- Footer -->
+    <footer class="text-center" id="footer">
+      <div class="container">
+        <p class="text-right"><strong>&copy; Pierrick C.</strong></p>
+      </div>
+    </footer>
+    <!-- Fin du Footer -->
+  </body>
+</html>

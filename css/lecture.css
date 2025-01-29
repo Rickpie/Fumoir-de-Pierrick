@@ -74,3 +74,24 @@
     display: inline-block;
     padding-bottom: 5px;
 }
+
+/* Classe pour gérer la taille des images */
+.image-responsive {
+    max-width: 100%; /* L'image ne dépasse pas la largeur de son conteneur */
+    height: auto; /* Conserve les proportions de l'image */
+    display: block; /* Évite l'espace en dessous de l'image */
+    margin: 0 auto; /* Centre l'image horizontalement */
+}
+
+/* Pour ajuster la taille des images spécifiques */
+.image-responsive.large {
+    max-width: 80%; /* Limite la taille à 80% de la largeur du conteneur */
+}
+
+.image-responsive.medium {
+    max-width: 60%; /* Limite la taille à 60% de la largeur du conteneur */
+}
+
+.image-responsive.small {
+    max-width: 40%; /* Limite la taille à 40% de la largeur du conteneur */
+}

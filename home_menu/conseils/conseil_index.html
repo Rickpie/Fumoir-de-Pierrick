@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Fumoir de Pierrick</title>
     <link href="/Fumoir_vitrine/css/design.css" rel="stylesheet" />
-    <link href="/Fumoir_vitrine/css/conseil.css" rel="stylesheet" />
     <link href="/Fumoir_vitrine/css/lecture.css" rel="stylesheet" />
     <linkq
       rel="stylesheet"
@@ -25,79 +24,86 @@
     <!--    END / HEAD -->
   </head>
   <body>
-    <!--  NAVIGATION -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container" id="navbar">
-        <div class="navbar-header page-scroll">
-          <button
-            type="button"
-            class="navbar-toggle"
-            data-toggle="collapse"
-            data-target="#collapse-menu"
-          >
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/Fumoir_vitrine/index.html" id="brand"
-            >Le fumoir de Pierrick</a
-          >
-        </div>
-        <div class="collapse navbar-collapse" id="collapse-menu">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="page-scroll">
-              <a href="/Fumoir_vitrine/index.html">Accueil</a>
-            </li>
-            <li class="page-scroll">
-              <a href="/Fumoir_vitrine/home_menu/conseils/conseil_index.html"
-                >Conseils</a
-              >
-            </li>
-            <li class="page-scroll">
-              <a href="/Fumoir_vitrine/home_menu/fumoir/fumoir_index.html"
-                >Fumoir</a
-              >
-            </li>
-            <li class="page-scroll">
-              <a href="/Fumoir_vitrine/home_menu/recettes/recettes_index.html"
-                >Recettes</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <!-- Charger le header (navbar et bannière) -->
+    <div id="header-container"></div>
 
-    <!--  Banniere -->
-    <div class="banniere">
-      <a href="/Fumoir_vitrine/index.html">
-        <img src="images/banniere.png" alt="Banniere" class="img-responsive" />
-      </a>
-    </div>
-    <!--  Fin Banniere-->
+    <script>
+      fetch('/Fumoir_vitrine/includes/header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        })
+        .catch(error => console.log('Erreur de chargement du header:', error));
+    </script>
+        <!-- Charger le header (navbar et bannière) -->
 
     <!-- HTML ICI  -->
     <div class="conseil-container">
         <div class="conseil-card">
-            <h3>Salage</h3>
+            <h1>Salage</h1>
             <a href="/Fumoir_vitrine/home_menu/conseils/salage/salage_index.html">
                 <img src="/Fumoir_vitrine/images/conseil-salage.png" alt="Conseil Salage" />
             </a>
         </div>
         <div class="conseil-card">
-            <h3>Fumage</h3>
+            <h1>Fumage</h1>
             <a href="/Fumoir_vitrine/home_menu/conseils/fumage/fumage_index.html">
                 <img src="/Fumoir_vitrine/images/conseil-fumage.jpg" alt="Conseil Fumage" />
             </a>
         </div>
         <div class="conseil-card">
-            <h3>Séchage</h3>
+            <h1>Séchage</h1>
             <a href="/Fumoir_vitrine/home_menu/conseils/sechage/sechage_index.html">
                 <img src="/Fumoir_vitrine/images/conseil-sechage.jpg" alt="Conseil Séchage" />
             </a>
         </div>
+        <div class="conseil-card">
+          <h1>conditionnement</h1>
+          <a href="/Fumoir_vitrine/home_menu/conseils/conditionnement/conditionnement_index.html">
+              <img src="/Fumoir_vitrine/images/conseil-conditionnement.jpg" alt="Conseil Séchage" />
+          </a>
+      </div>
     </div>
+    <div class="lecture-container">
+      <div class="lecture-content">
+          <h1>Utilisation du fumoir</h1>
+          <hr>
+          <p>
+              L’utilisation du fumoir est relativement simple et ne nécessite pas beaucoup de compétences ou d’expérience, mais elle demande une certaine attention et le respect de quelques points clés. Voici les principales étapes pour garantir un bon fumage :
+          </p>
+          <p><strong>Attention :</strong> Ne jamais poser le serpentin directement sur le bois.</p>
+          
+          <h3>Conseils pour la sciure</h3>
+          <ul>
+              <li>Pour assurer une combustion optimale, il est recommandé de passer la sciure au micro-ondes afin de la rendre totalement sèche.</li>
+          </ul>
+          
+          <h3>Conseils pour le serpentin</h3>
+          <ul>
+              <li>Entre deux fumages, il est préférable de bien nettoyer le serpentin. Passez-le au four pendant quelques minutes pour s'assurer qu'il est complètement sec avant de remettre de la sciure.</li>
+          </ul>
+          
+          <h3>Conseils pour le remplissage</h3>
+          <ul>
+              <li>Il ne sert à rien de tasser fortement la sciure. Il est préférable de remplir le serpentin à hauteur, de laisser le métal visible et de le tasser légèrement en tapotant le serpentin pour enlever l'air excédentaire. Cela suffit pour garantir une bonne combustion.</li>
+              <li>Une sciure trop tassée risque de s’éteindre, tandis qu'une sciure trop peu tassée se consumera trop rapidement.</li>
+              <li>Si la sciure ne suit pas l’itinéraire en spirale du serpentin, c’est probablement parce qu’elle est mal tassée ou en trop grande quantité, ce qui peut aussi arriver si la sciure est trop fine.</li>
+          </ul>
+          
+          <h3>Conseil pour l’allumage</h3>
+          <ul>
+              <li>Allumez le serpentin avec un petit chalumeau et assurez-vous qu’il commence à se consumer lentement.</li>
+          </ul>
+          
+          <h3>Conseils pendant le fumage</h3>
+          <ul>
+              <li>N’hésitez pas à vérifier de temps en temps si la sciure se consume correctement et si les aliments restent en place. Il n’est pas nécessaire d’ouvrir la porte à chaque instant, mais il est important de s'assurer que tout fonctionne bien.</li>
+              <li>La température est idéale entre 15°C et 25°C, si c’est trop chaud, ouvrez l’ouverture prévue à cet effet.</li>
+              <li>Eviter de mélanger viande et poisson dans la même tournée.</li>
+          </ul>
+      </div>
+  </div>
+  
 
     <!-- // END / HTML-->
 

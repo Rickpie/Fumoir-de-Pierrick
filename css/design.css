@@ -1,15 +1,14 @@
 /* Général */
-body {
-    padding-top: 50px;
-    padding-bottom: 50px;
+html, body {
+    height: 100%; /* Assurer que le body prend toute la hauteur de la fenêtre */
     margin: 0;
     font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    flex-direction: column; /* Disposition en colonne */
+    padding-top: 50px; /* ajuste la valeur en fonction de la hauteur de ta navbar */
 }
 
-/* Conteneur pour le contenu principal */
+/* Contenu principal qui occupe toute la hauteur restante */
 .content-wrapper {
     flex-grow: 1; /* Permet au contenu de prendre toute la hauteur restante */
 }
@@ -33,48 +32,90 @@ body {
     font-size: 1.2em;
 }
 
-/* Banniere */
-.banniere img {
+/* Photo page accueil */
+#section1 {
+    position: relative;
     width: 100%;
-    height: auto;
-    max-height: 400px;
-    display: block;
-    margin: 0 auto;
+    height: 500px; /* Ajuste la hauteur selon ton image */
+    overflow: hidden; /* Cache tout ce qui dépasse de l'image */
+    display: flex; /* Utilisation de Flexbox */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
 }
 
-/* Main Section */
-#mainsection {
-    background: url('../images/pexels-photo.jpg') center no-repeat;
-    background-size: cover;
-    min-height: 750px;
-    padding: 50px 0;
-    flex: 1;
+#section1 img {
+    width: 100%; /* L'image prend toute la largeur de la section */
+    height: 100%; /* L'image prend toute la hauteur de la section */
+    object-fit: cover; /* L'image couvre l'intégralité de la section sans déformation */
 }
 
-.intro-message {
-    text-align: center;
-    color: white;
-    font-size: 2.5em;
-}
-
-.card-container {
+/* Main Section *//* Conteneur des conseils */
+.conseil-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 20px;
+    justify-content: center;
     padding: 20px;
 }
 
-.card {
-    flex: 1 1 30%;
-    margin: 10px;
+/* Configuration des cards dans la section Conseil */
+.conseil-card {
+    background: #f9f9f9; /* Fond gris très clair */
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    border-radius: 12px; /* Bordure plus arrondie */
+    overflow: hidden;
     text-align: center;
+    width: 30%; /* Largeur des cards égale à celle des autres */
+    margin: 10px;
+    padding-bottom: 20px; /* Augmenter la marge sous la card pour plus d'espace */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition pour l'effet hover */
 }
 
-.card img {
-    width: 100%;
-    height: auto;
-    max-height: 500px;
-    max-width: 500px;
+/* Effet au survol (hover) des cards */
+.conseil-card:hover {
+    transform: scale(1.05); /* Agrandir la card légèrement au survol */
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
+}
+
+/* Style des images dans les cards de conseil */
+.conseil-card img {
+    width: 100%; /* Largeur égale à 100% de la card */
+    height: 300px; /* Hauteur forcée pour que toutes les images aient la même taille */
+    object-fit: cover; /* Remplir sans déformer */
+    max-width: 500px; /* Largeur maximale de l'image */
+    max-height: 500px; /* Hauteur maximale de l'image */
+    margin-bottom: 10px; /* Marge en bas pour créer un cadre autour de l'image */
+    border-bottom: 2px solid #ddd; /* Ligne de séparation sous l'image */
+    border-radius: 8px; /* Adoucir les angles des images */
+}
+
+/* Style des titres dans les cards de conseil */
+.conseil-card h3 {
+    margin: 15px 0;
+    font-size: 20px;
+    color: #444;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre portée pour un effet 3D */
+}
+
+/* Ajout d'un bouton d'action "En savoir plus" */
+.conseil-card .btn {
+    margin-top: 15px;
+    background-color: #ff6347; /* Couleur de fond du bouton */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Effet de survol du bouton */
+.conseil-card .btn:hover {
+    background-color: #d53f2b; /* Changement de couleur au survol */
 }
 
 /* Footer */
@@ -82,9 +123,8 @@ body {
     background-color: #f8f9fa;
     text-align: center;
     padding: 20px;
-    position: relative;
     width: 100%;
-    margin-top: auto;
+    margin-top: auto; /* Pousse le footer vers le bas */
 }
 
 /* bouton retour */

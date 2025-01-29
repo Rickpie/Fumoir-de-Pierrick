@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Fumoir de Pierrick</title>
     <link href="/Fumoir_vitrine/css/design.css" rel="stylesheet" />
-    <link href="/Fumoir_vitrine/css/conseil.css" rel="stylesheet" />
     <link href="/Fumoir_vitrine/css/lecture.css" rel="stylesheet" />
     <linkq
       rel="stylesheet"
@@ -25,57 +24,18 @@
     <!--    END / HEAD -->
   </head>
   <body>
-    <!--  NAVIGATION -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container" id="navbar">
-        <div class="navbar-header page-scroll">
-          <button
-            type="button"
-            class="navbar-toggle"
-            data-toggle="collapse"
-            data-target="#collapse-menu"
-          >
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/Fumoir_vitrine/index.html" id="brand"
-            >Le fumoir de Pierrick</a
-          >
-        </div>
-        <div class="collapse navbar-collapse" id="collapse-menu">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="page-scroll">
-              <a href="/Fumoir_vitrine/index.html">Accueil</a>
-            </li>
-            <li class="page-scroll">
-              <a href="/Fumoir_vitrine/home_menu/conseils/conseil_index.html"
-                >Conseils</a
-              >
-            </li>
-            <li class="page-scroll">
-              <a href="/Fumoir_vitrine/home_menu/fumoir/fumoir_index.html"
-                >Fumoir</a
-              >
-            </li>
-            <li class="page-scroll">
-              <a href="/Fumoir_vitrine/home_menu/recettes/recettes_index.html"
-                >Recettes</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <!-- Charger le header (navbar et bannière) -->
+    <div id="header-container"></div>
 
-    <!--  Banniere -->
-    <div class="banniere">
-      <a href="/Fumoir_vitrine/index.html">
-        <img src="images/banniere.png" alt="Banniere" class="img-responsive" />
-      </a>
-    </div>
-    <!--  Fin Banniere-->
+    <script>
+      fetch('/Fumoir_vitrine/includes/header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        })
+        .catch(error => console.log('Erreur de chargement du header:', error));
+    </script>
+        <!-- Charger le header (navbar et bannière) -->
 
     <!-- HTML ICI  -->
     <div class="lecture-container">
@@ -128,6 +88,56 @@
             </p>
         </div>
     </div>
+    <div class="lecture-container">
+        <div class="lecture-content">
+            <h1>Le fumage</h1>
+            <hr>
+            <p>
+                Le fumage est une méthode relativement simple à réaliser. Une fois le serpentin allumé, il suffit d'attendre. Voici un aperçu des temps de fumage basiques pour différents aliments.
+            </p>
+            <h3>Poissons :</h3>
+            <ul>
+                <li><strong>Saumon :</strong> 12 à 24 heures, selon l’épaisseur du poisson et l’intensité de la fumée souhaitée.</li>
+                <li><strong>Truite :</strong> 8 à 12 heures, pour une saveur délicate sans cuisson excessive.</li>
+                <li><strong>Maquereau :</strong> 6 à 8 heures, étant un poisson plus gras, il absorbe bien la fumée.</li>
+                <li><strong>Thon :</strong> 8 à 12 heures, pour un goût fumé prononcé.</li>
+            </ul>
+            <h3>Fromages :</h3>
+            <ul>
+                <li><strong>Fromage à pâte dure (Comté, Gruyère) :</strong> 4 à 6 heures, en évitant que le fromage fonde, pour bien infuser les arômes de fumée.</li>
+                <li><strong>Fromage à pâte molle (Brie, Camembert) :</strong> 2 à 4 heures, en surveillant de près pour éviter la fusion du fromage.</li>
+            </ul>
+            <h3>Viandes :</h3>
+            <ul>
+                <li><strong>Magret de canard :</strong> 8 à 12 heures, pour un goût fumé prononcé sans cuisson.</li>
+                <li><strong>Viande de bœuf (steak, côtes) :</strong> 8 à 12 heures, selon l’intensité de la fumée souhaitée.</li>
+                <li><strong>Poulet (coupé en morceaux) :</strong> 6 à 8 heures, pour un résultat doux et savoureux.</li>
+                <li><strong>Côtelette de porc :</strong> 6 à 8 heures, pour un fumage doux.</li>
+                <li><strong>Jambon :</strong> 12 à 24 heures, selon l’épaisseur et la quantité de fumée désirée.</li>
+            </ul>
+            <p>
+                Le fumage à froid, étant lent et doux, permet aux aliments de s’imprégner profondément de la fumée sans les cuire. Cette méthode est idéale pour les produits délicats comme le poisson et les fromages, ainsi que pour les viandes qui nécessitent une saveur fumée subtile.
+            </p>
+        </div>
+    </div>
+    <div class="lecture-container">
+        <div class="lecture-content">
+            <h1>Fumage intermittent avec repos</h1>
+            <hr>
+            <p>
+                Le fumage intermittent consiste à fumer l’aliment pendant un certain temps, puis à le laisser reposer entre les sessions de fumage. Après chaque période de fumage, vous laissez l’aliment refroidir pendant quelques heures (généralement entre 1 à 2 heures) avant de reprendre le fumage. Cette méthode permet à la fumée de bien pénétrer l’aliment de manière progressive, tout en permettant à la surface de sécher légèrement entre les sessions, ce qui intensifie les saveurs.
+            </p>
+            <h3>Exemples :</h3>
+            <ul>
+                <li><strong>Exemple pour le saumon :</strong> Fumez le saumon pendant 4 heures, puis laissez-le reposer pendant 2 heures. Répétez cette procédure 2 ou 3 fois pour un goût de fumée plus marqué.</li>
+                <li><strong>Exemple pour le magret de canard :</strong> Fumez pendant 6 heures, laissez reposer 1 à 2 heures, puis continuez à fumer pour encore 4 à 6 heures.</li>
+            </ul>
+            <p>
+                Cette méthode permet de mieux exploiter la fumée et d’obtenir des saveurs plus profondes et nuancées.
+            </p>
+        </div>
+    </div>
+    
 
        
     <!-- // END / HTML-->
