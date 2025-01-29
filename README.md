@@ -1,5 +1,2 @@
-# vitrinewebsite
-Un site vitrine en 15 minutes avec Bootstrap
-
-Exemple sur : http://xp.frugalprototype.com/vitrine/
+Un site pour le fumage a froid des aliments
 
