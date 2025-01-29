@@ -1,0 +1,111 @@
+/* Général */
+body {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Conteneur pour le contenu principal */
+.content-wrapper {
+    flex-grow: 1; /* Permet au contenu de prendre toute la hauteur restante */
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+#navbar {
+    text-align: center;
+}
+
+#navbar a {
+    margin: 0 20px;
+    font-size: 1.2em;
+}
+
+/* Banniere */
+.banniere img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Main Section */
+#mainsection {
+    background: url('../images/pexels-photo.jpg') center no-repeat;
+    background-size: cover;
+    min-height: 750px;
+    padding: 50px 0;
+    flex: 1;
+}
+
+.intro-message {
+    text-align: center;
+    color: white;
+    font-size: 2.5em;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.card {
+    flex: 1 1 30%;
+    margin: 10px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    max-width: 500px;
+}
+
+/* Footer */
+#footer {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    margin-top: auto;
+}
+
+/* bouton retour */
+.return-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.return-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #5cb85c; /* Vert agréable */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+.return-button:hover {
+    background-color: #4cae4c; /* Un vert plus foncé au survol */
+    transform: translateY(-2px); /* Effet de léger soulèvement */
+}

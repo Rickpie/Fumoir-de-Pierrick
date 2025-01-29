@@ -1,0 +1,76 @@
+.lecture-container {
+    width: 70%;
+    margin: 50px auto;
+    padding: 40px;
+    background: #fdf6e3; /* Fond beige type livre */
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2); /* Ombre légère */
+    border-radius: 10px; /* Coins arrondis */
+    position: relative;
+    font-family: 'Georgia', serif;
+    line-height: 1.8; /* Meilleur interligne pour la lisibilité */
+    max-width: 900px; /* Empêche le texte d'être trop large */
+}
+
+.lecture-content {
+    text-align: justify;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px; /* Ajoute un peu de marge en bas pour espacer les paragraphes */
+}
+
+/* Titre principal centré et gras */
+.lecture-container h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #5a2a0d; /* Titre de couleur chaude */
+}
+
+/* Sous-titre h2 centré, en italique et plus petit */
+.lecture-container h2 {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.3em; 
+    color: #5a2a0d; /* Un brun doux pour le sous-titre */
+    margin-top: 20px;
+}
+
+/* Espacement des paragraphes */
+.lecture-container p {
+    margin-bottom: 15px;
+}
+
+/* Mots-clés en gras et couleur différente */
+.lecture-container strong {
+    color: #7a3e19; /* Couleur pour les mots-clés */
+    font-weight: bold;
+}
+
+/* Listes avec meilleure lisibilité */
+.lecture-container ul,
+.lecture-container ol {
+    margin-left: 20px;
+    padding-left: 20px;
+    margin-bottom: 20px; /* Espacement entre les listes */
+}
+
+.lecture-container li {
+    margin-bottom: 8px; /* Espacement entre les éléments de liste */
+}
+
+/* Icônes personnalisées dans les listes */
+.lecture-container ul li {
+    list-style-type: "👉"; /* Flèche comme puce */
+    padding-left: 5px;
+}
+
+/* Les sous-titres h3 en souligné */
+.lecture-container h3 {
+    font-size: 1.1em;
+    text-transform: uppercase;
+    margin-top: 20px;
+    border-bottom: 2px solid #7a3e19;
+    display: inline-block;
+    padding-bottom: 5px;
+}

@@ -1,0 +1,30 @@
+.conseil-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.conseil-card {
+    background: white;
+    border: 1px solid #ddd; /* Bordure fine */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    width: 250px;
+}
+
+.conseil-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 5%;
+}
+
+.conseil-card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
