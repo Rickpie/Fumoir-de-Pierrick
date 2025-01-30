@@ -1,53 +1,56 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Détecte le niveau du sous-dossier pour ajuster les chemins
-    const prefix = (location.pathname.match(/\//g) || []).length > 1 ? "../../" : "./";
-    console.log("Prefix détecté : ", prefix);  // Log pour vérifier le préfixe
-  
-    // Charger le header
+    // Log pour vérifier que le DOM est bien chargé
+    console.log("DOM chargé");
+
+    // Sélectionner les conteneurs du header et du footer
     const headerContainer = document.getElementById("header-container");
-    if (headerContainer) {
-      console.log("Chargement du header...");  // Log avant chargement du header
-      fetch(prefix + "includes/header.html")
-        .then(response => {
-          if (!response.ok) {
-            throw new Error("Erreur HTTP: " + response.status);
-          }
-          return response.text();
-        })
-        .then(data => {
-          console.log("Header chargé avec succès !");  // Log quand le header est chargé
-          headerContainer.innerHTML = data;
-        })
-        .catch(error => {
-          console.error("Erreur lors du chargement du header :", error);
-        });
-    } else {
-      console.log("Element header-container introuvable");  // Log si l'élément n'est pas trouvé
-    }
-  
-    // Charger le footer
     const footerContainer = document.getElementById("footer-container");
-    if (footerContainer) {
-      console.log("Chargement du footer...");  // Log avant chargement du footer
-      fetch(prefix + "includes/footer.html")
-        .then(response => {
-          if (!response.ok) {
-            throw new Error("Erreur HTTP: " + response.status);
-          }
-          return response.text();
-        })
-        .then(data => {
-          console.log("Footer chargé avec succès !");  // Log quand le footer est chargé
-          footerContainer.innerHTML = data;
-        })
-        .catch(error => {
-          console.error("Erreur lors du chargement du footer :", error);
-        });
-    } else {
-      console.log("Element footer-container introuvable");  // Log si l'élément n'est pas trouvé
+
+    // Vérifier si les conteneurs existent
+    console.log("Header container trouvé:", headerContainer);
+    console.log("Footer container trouvé:", footerContainer);
+
+    // Fonction pour ajuster le chemin relatif des liens
+    function adjustLinkPath(path) {
+        // Utilise un chemin absolu basé sur la racine du projet
+        return `/Fumoir_vitrine/${path}`;
     }
-  
-    // Log de la fin de chargement du JS
-    console.log("Script JS chargé et exécuté.");
-  });
-  
+
+    // Charger la navbar dans le header
+    if (headerContainer) {
+        console.log("Chargement du header...");
+        headerContainer.innerHTML = `
+        <nav class="navbar">
+            <div class="container">
+                <!-- Lien vers la racine du site -->
+                <a class="navbar-brand" href="/Fumoir_vitrine/index.html">Le fumoir de Pierrick</a>
+                <div class="navbar-menu">
+                    <ul class="navbar-links">
+                        <!-- Lien vers la page d'accueil -->
+                        <li><a href="/Fumoir_vitrine/index.html">Accueil</a></li>
+                        <li><a href="${adjustLinkPath('home_menu/conseils/conseil_index.html')}">Conseils</a></li>
+                        <li><a href="${adjustLinkPath('home_menu/fumoir/fumoir_index.html')}">Fumoir</a></li>
+                        <li><a href="${adjustLinkPath('home_menu/recettes/recettes_index.html')}">Recettes</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section id="banniere">
+            <img src="/Fumoir_vitrine/images/banniere.jpg" alt="Bannière" class="img-banniere">
+        </section>`;
+    } else {
+        console.error("Erreur : Header container non trouvé.");
+    }
+
+    // Charger le footer
+    if (footerContainer) {
+        console.log("Chargement du footer...");
+        footerContainer.innerHTML = `
+        <footer>
+            <p>© 2025 Fumoir de Pierrick - Tous droits réservés</p>
+        </footer>`;
+        console.log("Footer inséré:", footerContainer.innerHTML);
+    } else {
+        console.error("Erreur : Footer container non trouvé.");
+    }
+});
