@@ -1,49 +1,48 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Log pour vérifier que le DOM est bien chargé
-    console.log("DOM chargé");
+  // Détecte le dossier racine du projet sur GitHub Pages ou en local
+  let paths = window.location.pathname.split("/").filter((path) => path !== "");
+  let repoName =
+    paths.length > 0 && window.location.hostname.includes("github.io")
+      ? `/${paths[0]}/`
+      : "/";
 
-    // Sélectionner les conteneurs du header et du footer
-    const headerContainer = document.getElementById("header-container");
-    const footerContainer = document.getElementById("footer-container");
+  // Charger le header
+  fetch(`${repoName}header/header.html`)
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("header").innerHTML = data;
 
-    // Vérifier si les conteneurs existent
-    console.log("Header container trouvé:", headerContainer);
-    console.log("Footer container trouvé:", footerContainer);
+      // Une fois le header chargé, corriger les liens
+      let navLinks = document.querySelectorAll(
+        "#header .navbar-links a, #header .navbar-brand"
+      );
+      navLinks.forEach((link) => {
+        let href = link.getAttribute("href");
+        if (href && !href.startsWith("http") && !href.startsWith("#")) {
+          link.setAttribute("href", repoName + href);
+        }
+      });
 
-    // Charger la navbar dans le header
-    if (headerContainer) {
-        console.log("Chargement du header...");
-        headerContainer.innerHTML = `
-        <nav class="navbar">
-            <div class="container">
-                <a class="navbar-brand" href="./index.html">Le fumoir de Pierrick</a>
-                <div class="navbar-menu">
-                    <ul class="navbar-links">
-                        <li><a href="./index.html">Accueil</a></li>
-                        <li><a href="./home_menu/conseils/conseil_index.html">Conseils</a></li>
-                        <li><a href="./home_menu/fumoir/fumoir_index.html">Fumoir</a></li>
-                        <li><a href="./home_menu/recettes/recettes_index.html">Recettes</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <section id="banniere">
-            <img src="images/banniere.jpg" alt="Bannière" class="img-banniere">
-        </section>`;
-        console.log("Header chargé avec succès.");
-    } else {
-        console.error("Erreur : Header container non trouvé.");
-    }
+      // Corriger l'image de la bannière si nécessaire
+      let bannerImg = document.querySelector("#header #banniere img");
+      if (bannerImg) {
+        let src = bannerImg.getAttribute("src");
+        if (src && !src.startsWith("http")) {
+          bannerImg.setAttribute("src", repoName + src);
+        }
+      }
+    })
+    .catch((error) => {
+      console.error("Erreur lors du chargement du header:", error);
+    });
 
-    // Charger le footer
-    if (footerContainer) {
-        console.log("Chargement du footer...");
-        footerContainer.innerHTML = `
-        <footer>
-            <p>© 2025 Fumoir de Pierrick - Tous droits réservés</p>
-        </footer>`;
-        console.log("Footer inséré:", footerContainer.innerHTML);
-    } else {
-        console.error("Erreur : Footer container non trouvé.");
-    }
+  // Charger le footer
+  fetch(`${repoName}footer/footer.html`)
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("footer").innerHTML = data;
+    })
+    .catch((error) => {
+      console.error("Erreur lors du chargement du footer:", error);
+    });
 });

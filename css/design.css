@@ -209,7 +209,7 @@ body {
 }
 
 /* Footer */
-#footer-container {
+#footer {
     background-color: #333;
     color: white;
     padding: 15px;
@@ -219,6 +219,6 @@ body {
     text-align: center;
   }
   
-  #footer-container p {
+  #footer p {
     margin: 0;
   }
