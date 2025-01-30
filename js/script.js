@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Fonction pour ajuster le chemin relatif des liens
     function adjustLinkPath(path) {
-        // Utilise un chemin absolu basé sur la racine du projet
-        return `/Fumoir_vitrine/${path}`;
+        // On supprime le préfixe "/Fumoir_vitrine" car GitHub Pages sert le site depuis la racine
+        return `${path}`;
     }
 
     // Charger la navbar dans le header
@@ -23,11 +23,11 @@ document.addEventListener("DOMContentLoaded", function () {
         <nav class="navbar">
             <div class="container">
                 <!-- Lien vers la racine du site -->
-                <a class="navbar-brand" href="/Fumoir_vitrine/index.html">Le fumoir de Pierrick</a>
+                <a class="navbar-brand" href="./index.html">Le fumoir de Pierrick</a>
                 <div class="navbar-menu">
                     <ul class="navbar-links">
                         <!-- Lien vers la page d'accueil -->
-                        <li><a href="/Fumoir_vitrine/index.html">Accueil</a></li>
+                        <li><a href="./index.html">Accueil</a></li>
                         <li><a href="${adjustLinkPath('home_menu/conseils/conseil_index.html')}">Conseils</a></li>
                         <li><a href="${adjustLinkPath('home_menu/fumoir/fumoir_index.html')}">Fumoir</a></li>
                         <li><a href="${adjustLinkPath('home_menu/recettes/recettes_index.html')}">Recettes</a></li>
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         </nav>
         <section id="banniere">
-            <img src="/Fumoir_vitrine/images/banniere.jpg" alt="Bannière" class="img-banniere">
+            <img src="./images/banniere.jpg" alt="Bannière" class="img-banniere">
         </section>`;
     } else {
         console.error("Erreur : Header container non trouvé.");
