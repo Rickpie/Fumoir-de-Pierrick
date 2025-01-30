@@ -29,9 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         <!-- Lien vers la page d'accueil -->
                         <li><a href="./index.html">Accueil</a></li>
                         <!-- On utilise des liens relatifs qui sont calculés à partir du dossier actuel -->
-                        <li><a href="./conseil_index.html">Conseils</a></li>
-                        <li><a href="${adjustLinkPath('home_menu/fumoir/fumoir_index.html')}">Fumoir</a></li>
-                        <li><a href="${adjustLinkPath('home_menu/recettes/recettes_index.html')}">Recettes</a></li>
+                        <li><a href="./home_menu/conseils/conseil_index.html">Conseils</a></li>
+                        <li><a href="./home_menu/fumoir/fumoir_index.html">Fumoir</a></li>
+                        <li><a href="./home_menu/recettes/recettes_index.html">Recettes</a></li>
                     </ul>
                 </div>
             </div>
