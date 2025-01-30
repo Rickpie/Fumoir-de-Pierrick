@@ -24,18 +24,9 @@
     <!--    END / HEAD -->
   </head>
   <body>
-    <!-- Charger le header (navbar et bannière) -->
-    <div id="header-container"></div>
 
-    <script>
-      fetch('/Fumoir_vitrine/includes/header.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('header-container').innerHTML = data;
-        })
-        .catch(error => console.log('Erreur de chargement du header:', error));
-    </script>
         <!-- Charger le header (navbar et bannière) -->
+        <div id="header-container"></div>
 
     <!-- HTML ICI  -->
     <div class="lecture-container">
@@ -148,12 +139,10 @@
     </div>
     <!-- FIN Boutton BACK-->
 
-    <!-- Footer -->
-    <footer class="text-center" id="footer">
-      <div class="container">
-        <p class="text-right"><strong>&copy; Pierrick C.</strong></p>
-      </div>
-    </footer>
-    <!-- Fin du Footer -->
+    <!-- Charger le footer -->
+    <div id="footer-container"></div>
+
+    <!-- Charger le script JS -->
+    <script src="/Fumoir_vitrine/js/script.js"></script>
   </body>
 </html>

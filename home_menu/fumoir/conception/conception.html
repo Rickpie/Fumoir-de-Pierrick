@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <!--    DEBUT DU HEAD -->
+    <!-- DEBUT DU HEAD -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Fumoir de Pierrick</title>
     <link href="/Fumoir_vitrine/css/design.css" rel="stylesheet" />
     <link href="/Fumoir_vitrine/css/lecture.css" rel="stylesheet" />
-    <linkq
+    <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
     />
@@ -21,23 +21,13 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <!--    END / HEAD -->
+    <!-- END / HEAD -->
   </head>
   <body>
     <!-- Charger le header (navbar et bannière) -->
     <div id="header-container"></div>
 
-    <script>
-      fetch('/Fumoir_vitrine/includes/header.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('header-container').innerHTML = data;
-        })
-        .catch(error => console.log('Erreur de chargement du header:', error));
-    </script>
-        <!-- Charger le header (navbar et bannière) -->
-
-    <!-- HTML ICI  -->
+    <!-- HTML ICI -->
     <div class="lecture-container">
       <div class="lecture-content">
           <h1>Fabrication de mon fumoir</h1>
@@ -80,33 +70,30 @@
   
           <p>Voici une visualisation de ce que le fumoir sera une fois terminé :</p>
           <img src="/Fumoir_vitrine/images/fumoir-rendu-fumoir.png" alt="Rendu final du fumoir" class="img-fluid image-responsive">
-          <h4>N'étant pas équipé énormément en outillage, j'ai opté pour la facilité, certaines enseignes de bricolage propose directement de faire couper les planches aux bonnes dimension, c'est ce que j'ai utilisé, ça ne ma couté que quelques euros, j'en suis bien content car j'ai eu les dimension exactes de ce que j'avais besoin, le tout parfaitement droit</h4>
+          <h4>N'étant pas équipé énormément en outillage, j'ai opté pour la facilité, certaines enseignes de bricolage proposent directement de faire couper les planches aux bonnes dimensions, c'est ce que j'ai utilisé, ça ne m'a coûté que quelques euros, j'en suis bien content car j'ai eu les dimensions exactes de ce que j'avais besoin, le tout parfaitement droit</h4>
       </div>
-  </div>
-  
-  <div class="lecture-container">
-    <div class="lecture-content">
-        <h1>Les accessoires</h1>
-        <hr>
-        <p>Voici la liste complète des accessoires que j’ai achetés pour mon fumoir :</p>
-        <ul>
-            <li><strong>2 fermoirs à ressort pour 90°</strong></li>
-            <li><strong>4 charnières en T</strong></li>
-            <li><strong>1 grille d’aération réglable pour barbecue de 95mm</strong></li>
-            <li><strong>4 roulettes de meuble universelles</strong></li>
-        </ul>
     </div>
-  </div>
+
+    <div class="lecture-container">
+      <div class="lecture-content">
+          <h1>Les accessoires</h1>
+          <hr>
+          <p>Voici la liste complète des accessoires que j’ai achetés pour mon fumoir :</p>
+          <ul>
+              <li><strong>2 fermoirs à ressort pour 90°</strong></li>
+              <li><strong>4 charnières en T</strong></li>
+              <li><strong>1 grille d’aération réglable pour barbecue de 95mm</strong></li>
+              <li><strong>4 roulettes de meuble universelles</strong></li>
+          </ul>
+      </div>
+    </div>
+
     <div class="lecture-container">
         <div class="lecture-content">
-            <h1> La construction </h1>
-            </p>
+            <h1>La construction</h1>
+            <p>Details à venir...</p>  <!-- Ajouter un contenu pour la construction -->
         </div>
     </div>
-    
-
-       
-    <!-- // END / HTML-->
 
     <!-- Boutton BACK-->
     <div class="return-button-container">
@@ -114,12 +101,9 @@
     </div>
     <!-- FIN Boutton BACK-->
 
-    <!-- Footer -->
-    <footer class="text-center" id="footer">
-      <div class="container">
-        <p class="text-right"><strong>&copy; Pierrick C.</strong></p>
-      </div>
-    </footer>
-    <!-- Fin du Footer -->
+    <!-- Charger le footer -->
+    <div id="footer-container"></div>
+
+    <script src="/Fumoir_vitrine/js/script.js"></script>  <!-- Charger le script JS -->
   </body>
 </html>

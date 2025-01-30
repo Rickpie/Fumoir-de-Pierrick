@@ -28,16 +28,6 @@
     <!-- Charger le header (navbar et bannière) -->
     <div id="header-container"></div>
 
-    <script>
-      fetch('/Fumoir_vitrine/includes/header.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('header-container').innerHTML = data;
-        })
-        .catch(error => console.log('Erreur de chargement du header:', error));
-    </script>
-        <!-- Charger le header (navbar et bannière) -->
-
     <!-- HTML ICI  -->
     <div class="lecture-container">
       <div class="lecture-content">
@@ -246,12 +236,17 @@
     </div>
     <!-- FIN Boutton BACK-->
 
-    <!-- Footer -->
-    <footer class="text-center" id="footer">
-      <div class="container">
-        <p class="text-right"><strong>&copy; Pierrick C.</strong></p>
+    <!-- Si besoin de ' FORME DE PAGE' -->
+    <div class="lecture-container">
+        <div class="lecture-content">
+          Ici le texte à taper pour une forme de page
+        </div>
       </div>
-    </footer>
-    <!-- Fin du Footer -->
+  
+      <!-- Charger le footer -->
+      <div id="footer-container"></div>
+  
+      <!-- Charger le script JS -->
+      <script src="/Fumoir_vitrine/js/script.js"></script>
   </body>
 </html>

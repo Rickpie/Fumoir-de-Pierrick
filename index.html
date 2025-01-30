@@ -20,59 +20,52 @@
   <!-- Charger le header (navbar et bannière) -->
   <div id="header-container"></div>
 
-  <script>
-    fetch('/Fumoir_vitrine/includes/header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('header-container').innerHTML = data;
-      })
-      .catch(error => console.log('Erreur de chargement du header:', error));
-  </script>
-      <!-- Charger le header (navbar et bannière) -->
-  
-  <div class="content-wrapper">
-    <div class="conseil-container">
-      <!-- Card 1 -->
-      <div class="conseil-card">
-        <div class="image-card-container">
-            <a href="/Fumoir_vitrine/home_menu/conseils/conseil_index.html">
-                <img class="conseil-card-img" src="images/conseil.png" alt="Card image" />
-            </a>
+  <div class="card-container">
+    <!-- Card 1 -->
+    <a href="/Fumoir_vitrine/home_menu/conseils/conseil_index.html" class="card-link">
+        <div class="card">
+            <div class="card-image-container">
+                <img class="card-img" src="images/conseil.png" alt="Image 1">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Mes conseils</h3>
+                <p class="card-description">Mes différents conseils à propos du Salage, du fumage, du séchage.</p>
+            </div>
         </div>
-        <div class="conseil-card-overlay">
-            <h1 class="conseil-card-title">Mes conseils</h1>
-            <h4>Mes différents conseils à propos du Salage, du fumage, du séchage.</h4>
-        </div>
-    </div>
-      <!-- Card 2 -->
-     <!-- Card 1 -->
-<div class="conseil-card">
-  <a href="/Fumoir_vitrine/home_menu/fumoir/fumoir_index.html">
-      <img class="conseil-card-img" src="images/fumoir.jpg" alt="Card image" />
-  </a>
-  <div class="conseil-card-overlay">
-      <h1 class="conseil-card-title">Le fumoir</h1>
-      <h4>Ici je parlerai du fumoir, de sa réalisation DIY, aux ustensiles indispensables, en passant par la sciure.</h4>
-  </div>
-</div>
+    </a>
 
-<!-- Card 2 -->
-<div class="conseil-card">
-  <a href="/Fumoir_vitrine/home_menu/recettes/recettes_index.html">
-      <img class="conseil-card-img" src="images/recette.jpg" alt="Card image" />
-  </a>
-  <div class="conseil-card-overlay">
-      <h1 class="conseil-card-title">Idée de recette</h1>
-      <h4>Retrouvez ici une multitude de recettes, pour de la viande, des poissons, des fromages et beaucoup d'autres aliments que vous pourrez sublimer avec votre fumoir.</h4>
-  </div>
+    <!-- Card 2 -->
+    <a href="/Fumoir_vitrine/home_menu/fumoir/fumoir_index.html" class="card-link">
+        <div class="card">
+            <div class="card-image-container">
+                <img class="card-img" src="images/fumoir.jpg" alt="Image 2">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Le fumoir</h3>
+                <p class="card-description">Ici je parlerai du fumoir, de sa réalisation DIY, aux ustensiles indispensables, en passant par la sciure.</p>
+            </div>
+        </div>
+    </a>
+
+    <!-- Card 3 -->
+    <a href="/Fumoir_vitrine/home_menu/recettes/recettes_index.html" class="card-link">
+        <div class="card">
+            <div class="card-image-container">
+                <img class="card-img" src="images/recette.jpg" alt="Image 3">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Idée de recette</h3>
+                <p class="card-description">Retrouvez ici une multitude de recettes, pour de la viande, des poissons, des fromages et beaucoup d'autres aliments que vous pourrez sublimer avec votre fumoir.</p>
+            </div>
+        </div>
+    </a>
 </div>
 
 
-  <!-- Footer -->
-  <footer class="text-center" id="footer">
-    <div class="container">
-      <p class="text-right"><strong>&copy; Pierrick C.</strong></p>
-    </div>
-  </footer>
+  <!-- Charger le footer -->
+  <div id="footer-container"></div>
+
+  <!-- Charger le script JS -->
+  <script src="/Fumoir_vitrine/js/script.js"></script>
 </body>
 </html>
