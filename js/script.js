@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
   console.log("DOM entièrement chargé et analysé");
 
   // Charger dynamiquement le header (qui inclut aussi la navbar et la bannière)
-  fetch('/Fumoir_vitrine/includes/header.html')
+  fetch('includes/header.html')
     .then(response => {
       if (!response.ok) {
         throw new Error('Erreur de chargement du header : ' + response.statusText);
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
     .catch(error => console.error('Erreur de chargement du header:', error));
 
   // Charger dynamiquement le footer
-  fetch('/Fumoir_vitrine/includes/footer.html')
+  fetch('includes/footer.html')  // Remarque : chemin relatif au dossier courant
     .then(response => {
       if (!response.ok) {
         throw new Error('Erreur de chargement du footer : ' + response.statusText);
