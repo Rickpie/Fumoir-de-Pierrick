@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Fumoir de Pierrick</title>
-    <link href="/Fumoir_vitrine/css/design.css" rel="stylesheet" />
-    <link href="/Fumoir_vitrine/css/lecture.css" rel="stylesheet" />
-    <linkq
+    <link href="../../../css/design.css" rel="stylesheet" />
+    <link href="../../../css/lecture.css" rel="stylesheet" />
+    
+    <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
     />
@@ -26,17 +27,7 @@
   <body>
     <!-- Charger le header (navbar et bannière) -->
     <div id="header-container"></div>
-
-    <script>
-      fetch('/Fumoir_vitrine/includes/header.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('header-container').innerHTML = data;
-        })
-        .catch(error => console.log('Erreur de chargement du header:', error));
-    </script>
-        <!-- Charger le header (navbar et bannière) -->
-    <!-- HTML ICI  -->
+   <!-- HTML ICI  -->
     <div class="lecture-container">
       <div class="lecture-content">
           <h1>Le séchage</h1>
@@ -210,11 +201,9 @@
     <!-- FIN Boutton BACK-->
 
     <!-- Footer -->
-    <footer class="text-center" id="footer">
-      <div class="container">
-        <p class="text-right"><strong>&copy; Pierrick C.</strong></p>
-      </div>
-    </footer>
-    <!-- Fin du Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Inclusion du fichier JavaScript -->
+    <script src="../../../js/script.js"></script>
   </body>
 </html>

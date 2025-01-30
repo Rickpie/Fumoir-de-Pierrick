@@ -207,3 +207,18 @@ body {
         height: 250px;  /* Hauteur plus petite de l'image sur petits écrans */
     }
 }
+
+/* Footer */
+.footer-container {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+  }
+  
+  .footer-container p {
+    margin: 0;
+  }
