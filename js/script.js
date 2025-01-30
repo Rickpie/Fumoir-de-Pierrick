@@ -1,34 +1,40 @@
-// loadHeaderFooter.js
+document.addEventListener("DOMContentLoaded", function () {
+    let prefix = './';  // Dossier actuel
 
-document.addEventListener("DOMContentLoaded", function() {
-  console.log("DOM entièrement chargé et analysé");
+    // Si on est dans un sous-dossier, on remonte de 2 niveaux
+    const depth = window.location.pathname.split('/').length - 1;
+    if (depth > 1) {
+        prefix = '../../../../';  // Remonter de 4 niveaux si trop profond
+    }
 
-  // Charger dynamiquement le header (qui inclut aussi la navbar et la bannière)
-  fetch('includes/header.html')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Erreur de chargement du header : ' + response.statusText);
-      }
-      return response.text();
-    })
-    .then(data => {
-      console.log("Header chargé avec succès !");
-      document.getElementById('header-container').innerHTML = data;
-    })
-    .catch(error => console.error('Erreur de chargement du header:', error));
-
-  // Charger dynamiquement le footer
-  fetch('includes/footer.html')  // Remarque : chemin relatif au dossier courant
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Erreur de chargement du footer : ' + response.statusText);
-      }
-      return response.text();
-    })
-    .then(data => {
-      console.log("Footer chargé avec succès !");
-      // Injecter le footer dans la section #footer-container
-      document.getElementById('footer-container').innerHTML = data;
-    })
-    .catch(error => console.error('Erreur de chargement du footer:', error));
+    // Charger le header
+    const headerHTML = `
+        <nav class="navbar">
+          <div class="container">
+            <a class="navbar-brand" href="${prefix}index.html">Le fumoir de Pierrick</a>
+            <div class="navbar-menu">
+              <ul class="navbar-links">
+                <li><a href="${prefix}index.html">Accueil</a></li>
+                <li><a href="${prefix}home_menu/conseils/conseil_index.html">Conseils</a></li>
+                <li><a href="${prefix}home_menu/fumoir/fumoir_index.html">Fumoir</a></li>
+                <li><a href="${prefix}home_menu/recettes/recettes_index.html">Recettes</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <section id="banniere">
+          <img src="${prefix}images/banniere.jpg" alt="Bannière" class="img-banniere">
+        </section>
+    `;
+  
+    // Charger le footer
+    const footerHTML = `
+        <footer>
+          <p>&copy; 2025 Le fumoir de Pierrick. Tous droits réservés.</p>
+        </footer>
+    `;
+  
+    // Injection dans les conteneurs du header et footer
+    document.getElementById('header-container').innerHTML = headerHTML;
+    document.getElementById('footer-container').innerHTML = footerHTML;
 });
