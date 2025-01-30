@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Fonction pour ajuster le chemin relatif des liens
     function adjustLinkPath(path) {
-        // On supprime le préfixe "/Fumoir_vitrine" car GitHub Pages sert le site depuis la racine
-        return `${path}`;
+        // On utilise simplement le chemin relatif sans préfixe
+        return path;
     }
 
     // Charger la navbar dans le header
@@ -28,7 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     <ul class="navbar-links">
                         <!-- Lien vers la page d'accueil -->
                         <li><a href="./index.html">Accueil</a></li>
-                        <li><a href="${adjustLinkPath('home_menu/conseils/conseil_index.html')}">Conseils</a></li>
+                        <!-- On utilise des liens relatifs qui sont calculés à partir du dossier actuel -->
+                        <li><a href="./conseil_index.html">Conseils</a></li>
                         <li><a href="${adjustLinkPath('home_menu/fumoir/fumoir_index.html')}">Fumoir</a></li>
                         <li><a href="${adjustLinkPath('home_menu/recettes/recettes_index.html')}">Recettes</a></li>
                     </ul>
