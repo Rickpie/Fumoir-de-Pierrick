@@ -1,40 +1,53 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let prefix = './';  // Dossier actuel
-
-    // Si on est dans un sous-dossier, on remonte de 2 niveaux
-    const depth = window.location.pathname.split('/').length - 1;
-    if (depth > 1) {
-        prefix = '../../../../';  // Remonter de 4 niveaux si trop profond
-    }
-
+    // Détecte le niveau du sous-dossier pour ajuster les chemins
+    const prefix = (location.pathname.match(/\//g) || []).length > 1 ? "../../" : "./";
+    console.log("Prefix détecté : ", prefix);  // Log pour vérifier le préfixe
+  
     // Charger le header
-    const headerHTML = `
-        <nav class="navbar">
-          <div class="container">
-            <a class="navbar-brand" href="${prefix}index.html">Le fumoir de Pierrick</a>
-            <div class="navbar-menu">
-              <ul class="navbar-links">
-                <li><a href="${prefix}index.html">Accueil</a></li>
-                <li><a href="${prefix}home_menu/conseils/conseil_index.html">Conseils</a></li>
-                <li><a href="${prefix}home_menu/fumoir/fumoir_index.html">Fumoir</a></li>
-                <li><a href="${prefix}home_menu/recettes/recettes_index.html">Recettes</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-        <section id="banniere">
-          <img src="${prefix}images/banniere.jpg" alt="Bannière" class="img-banniere">
-        </section>
-    `;
+    const headerContainer = document.getElementById("header-container");
+    if (headerContainer) {
+      console.log("Chargement du header...");  // Log avant chargement du header
+      fetch(prefix + "includes/header.html")
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Erreur HTTP: " + response.status);
+          }
+          return response.text();
+        })
+        .then(data => {
+          console.log("Header chargé avec succès !");  // Log quand le header est chargé
+          headerContainer.innerHTML = data;
+        })
+        .catch(error => {
+          console.error("Erreur lors du chargement du header :", error);
+        });
+    } else {
+      console.log("Element header-container introuvable");  // Log si l'élément n'est pas trouvé
+    }
   
     // Charger le footer
-    const footerHTML = `
-        <footer>
-          <p>&copy; 2025 Le fumoir de Pierrick. Tous droits réservés.</p>
-        </footer>
-    `;
+    const footerContainer = document.getElementById("footer-container");
+    if (footerContainer) {
+      console.log("Chargement du footer...");  // Log avant chargement du footer
+      fetch(prefix + "includes/footer.html")
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Erreur HTTP: " + response.status);
+          }
+          return response.text();
+        })
+        .then(data => {
+          console.log("Footer chargé avec succès !");  // Log quand le footer est chargé
+          footerContainer.innerHTML = data;
+        })
+        .catch(error => {
+          console.error("Erreur lors du chargement du footer :", error);
+        });
+    } else {
+      console.log("Element footer-container introuvable");  // Log si l'élément n'est pas trouvé
+    }
   
-    // Injection dans les conteneurs du header et footer
-    document.getElementById('header-container').innerHTML = headerHTML;
-    document.getElementById('footer-container').innerHTML = footerHTML;
-});
+    // Log de la fin de chargement du JS
+    console.log("Script JS chargé et exécuté.");
+  });
+  
