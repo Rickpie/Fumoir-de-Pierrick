@@ -3,6 +3,10 @@
     margin: 50px auto;
     padding: 40px;
     background: #fdf6e3; /* Fond beige type livre */
+    background-image: url('/images/papier-rustique.jpg'); /* Image de fond */
+    background-size: cover; /* L'image couvre toute la surface */
+    background-position: center; /* Centre l'image de fond */
+    background-attachment: fixed; /* L'image reste fixe lors du défilement */
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2); /* Ombre légère */
     border-radius: 10px; /* Coins arrondis */
     position: relative;
@@ -10,7 +14,6 @@
     line-height: 1.8; /* Meilleur interligne pour la lisibilité */
     max-width: 900px; /* Empêche le texte d'être trop large */
 }
-
 .lecture-content {
     text-align: justify;
     font-size: 18px;

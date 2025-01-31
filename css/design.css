@@ -84,108 +84,76 @@ body {
     padding: 0;
 }
 
-
-
 /* Conteneur des cartes */
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;  /* Augmenter l'espacement entre les cartes */
+    gap: 20px;  /* Réduit l'espacement entre les cartes */
     justify-content: center;
     padding: 20px;
-}
-
-/* Lien autour de la carte entière */
-.card-link {
-    display: block;  /* Permet à l'élément <a> de prendre toute la carte */
-    text-decoration: none;  /* Retire la décoration par défaut du lien */
-}
-
-/* Conteneur des cartes */
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;  /* Espacement entre les cartes */
-    justify-content: center;
-    padding: 20px;
-}
-
-/* Conteneur des cartes */
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;  /* Espacement entre les cartes */
-    justify-content: center;
-    padding: 20px;
-}
-
-/* Conteneur des cartes */
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;  /* Espacement entre les cartes */
-    justify-content: center;
-    padding: 20px;
-}
-
-/* Cards */
-.card {
-    display: flex;  /* Utilisation de flexbox */
-    flex-direction: column;  /* Aligner le contenu verticalement */
-    background: #F7F0E1; /* Beige doux pour les cards */
-    border: 1px solid #D8C4A0; /* Bordure subtile */
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15); /* Ombre marquée */
-    border-radius: 12px; /* Bordure arrondie */
-    overflow: hidden; /* Empêche l'image de déborder */
-    text-align: center;
-    width: 100%;  /* Par défaut, les cartes prennent toute la largeur */
-    max-width: 500px;  /* Largeur maximale des cartes */
-    margin: 10px;
-    padding-bottom: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 500px; /* Hauteur fixe pour uniformiser la taille des cartes */
-    min-width: 300px;  /* Largeur minimale pour éviter les cartes trop petites */
-    flex-grow: 1; /* Permet à la carte de grandir pour remplir l'espace */
-}
-
-/* Effet au survol de la carte */
-.card:hover {
-    transform: translateY(-5px);  /* Légère élévation au survol */
-    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);  /* Ombre plus marquée au survol */
 }
 
 /* Conteneur de l'image */
 .card-image-container {
     width: 100%;
-    height: 350px;  /* Hauteur fixe du conteneur de l'image */
+    height: 280px;  /* Réduit la hauteur du conteneur de l'image */
     overflow: hidden;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Images dans les cartes */
 .card-img {
     width: 100%;
-    max-height: 100%;  /* L'image s'adapte à la hauteur du conteneur sans déformation */
-    object-fit: cover; /* L'image couvre l'ensemble du conteneur sans se déformer */
+    height: 100%;  /* L'image occupe toute la hauteur du conteneur */
+    object-fit: cover;
     display: block;
+}
+
+/* Cards */
+.card {
+    display: flex;
+    flex-direction: column;
+    background: #F7F0E1;
+    border: 1px solid #D8C4A0;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15);  /* Ombre plus légère */
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    max-width: 420px;  /* Réduit la largeur maximale des cartes de 500px à 420px */
+    margin: 10px;
+    padding-bottom: 15px;  /* Réduit l'espace en bas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 420px;  /* Réduit la hauteur des cartes de 500px à 420px */
+    min-width: 250px;  /* Largeur minimale des cartes */
+    flex-grow: 1;
+}
+
+/* Effet au survol de la carte */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2);  /* Ombre légèrement plus marquée */
 }
 
 /* Titres dans les cartes */
 .card-title {
-    margin: 15px 0;
-    font-size: 26px; /* Augmenter la taille du titre */
-    color: #5A3D3A; /* Brun chaud pour les titres */
+    margin: 10px 0;  /* Réduit l'espace autour du titre */
+    font-size: 22px; /* Réduit la taille du titre */
+    color: #5A3D3A;
     font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* Description sous le titre */
 .card-description {
-    font-size: 1.2em; /* Augmenter la taille de la description */
+    font-size: 1em;  /* Réduit la taille de la description */
     color: #333;
-    margin-bottom: 15px;
-    padding: 0 15px;
-    flex-grow: 1; /* L'espace restant est occupé par la description */
+    margin-bottom: 10px;
+    padding: 0 10px;  /* Réduit le padding interne */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
