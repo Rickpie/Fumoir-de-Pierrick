@@ -1,0 +1,108 @@
+/* Conteneur principal avec ambiance rustique */
+.calculator-card {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px 40px;
+  background: #fdf7f0; /* Teinte crème de secours */
+  border-radius: 12px;
+  border: 1px solid #d4b892;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  font-family: 'Georgia', serif;
+  background-image: url('/images/papier-rustique.jpg'); /* Ton image de fond */
+  background-size: cover; /* Couvre tout l'élément */
+  background-position: center center; /* Centrer l'image */
+  color: #5a3d2b; /* Définir une couleur de texte par défaut */
+  background-attachment: fixed; /* Garder l'image de fond fixe */
+}
+
+/* Reste du CSS inchangé */
+
+/* Titre rustique */
+.calculator-card h2 {
+  text-align: center;
+  font-size: 2em;
+  color: #5a3d2b; /* Marron chaud */
+  margin-bottom: 25px;
+  font-family: 'Goudy Old Style', serif;
+}
+
+/* Groupes de champs du formulaire */
+.calculator-card .form-group {
+  margin-bottom: 20px;
+}
+
+/* Labels avec une touche rustique */
+.calculator-card .form-group label {
+  display: block;
+  font-size: 1em;
+  color: #7a5c48; /* Brun moyen */
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+/* Champs de saisie et menu déroulant */
+.calculator-card .form-group input,
+.calculator-card .form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1em;
+  border: 1px solid #a67c52;
+  border-radius: 6px;
+  background-color: #fff8f0;
+  color: #5a3d2b;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Champs de saisie et menu déroulant au focus */
+.calculator-card .form-group input:focus,
+.calculator-card .form-group select:focus {
+  border-color: #8b5e3c;
+  box-shadow: 0 0 5px rgba(139, 94, 60, 0.3);
+  outline: none;
+}
+
+/* Bouton de calcul avec style rustique */
+.calculator-card button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #8b5e3c;
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+.calculator-card button:hover {
+  background-color: #7a5230;
+  transform: translateY(-2px);
+}
+
+/* Zone d'affichage des résultats */
+.calculator-card .recipe {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff8f0;
+  border: 1px solid #d4b892;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.result-card p {
+  font-size: 1.1em;
+  margin: 10px 0;
+  color: #5a3d2b;
+}
+
+.result-card strong {
+  color: #7a5230;
+}
+
+/* Masquer la zone de résultats par défaut */
+.hidden {
+  display: none;
+}
