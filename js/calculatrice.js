@@ -1,50 +1,58 @@
 document.addEventListener('DOMContentLoaded', function() {
   console.log('Le DOM est entièrement chargé.');
 
-  document.getElementById('calculator-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Empêche la soumission du formulaire
-    console.log('Formulaire soumis.');
+  const formulaire = document.getElementById('formulaire-calcul');
+  if (formulaire) {
+    formulaire.addEventListener('submit', function(event) {
+      event.preventDefault(); // Empêche la soumission du formulaire
+      console.log('Formulaire soumis.');
 
-    // Récupère les valeurs des champs
-    const weight = parseFloat(document.getElementById('weight').value);
-    const saltPercentage = parseFloat(document.getElementById('salt').value);
+      // Récupère les valeurs des champs
+      const poids = parseFloat(document.getElementById('poids').value);
+      const pourcentageSel = parseFloat(document.getElementById('sel').value);
 
-    // Affiche les valeurs récupérées dans la console
-    console.log('Poids de la viande:', weight);
-    console.log('Pourcentage de sel:', saltPercentage);
+      // Affiche les valeurs récupérées dans la console
+      console.log('Poids de la viande:', poids);
+      console.log('Pourcentage de sel:', pourcentageSel);
 
-    // Effectue les calculs
-    const saltAmount = (weight * saltPercentage) / 100;
-    const sugarAmount = saltAmount / 2;
-    const pepperAmount = 1; // g (valeur fixe)
-    const juniperAmount = 1; // g (valeur fixe)
-    const spiceAmount = 0.5; // g (valeur fixe)
-    const laurelAmount = 0.3; // g (valeur fixe)
+      // Effectue les calculs
+      const quantiteSel = (poids * pourcentageSel) / 100;
+      const quantiteSucre = quantiteSel / 2;
+      const quantitePoivre = 1; // g (valeur fixe)
+      const quantiteGenievre = 1; // g (valeur fixe)
+      const quantiteEpices = 0.5; // g (valeur fixe)
+      const quantiteLaurier = 0.3; // g (valeur fixe)
 
-    // Affiche les résultats dans la console
-    console.log('Quantité de sel:', saltAmount);
-    console.log('Quantité de sucre:', sugarAmount);
-    console.log('Quantité de poivre:', pepperAmount);
-    console.log('Quantité de genièvre:', juniperAmount);
-    console.log('Quantité d\'épices:', spiceAmount);
-    console.log('Quantité de laurier:', laurelAmount);
+      // Affiche les résultats dans la console
+      console.log('Quantité de sel:', quantiteSel);
+      console.log('Quantité de sucre:', quantiteSucre);
+      console.log('Quantité de poivre:', quantitePoivre);
+      console.log('Quantité de genièvre:', quantiteGenievre);
+      console.log('Quantité d\'épices:', quantiteEpices);
+      console.log('Quantité de laurier:', quantiteLaurier);
 
-    // Vérifie si les éléments existent avant de les manipuler
-    const saltElement = document.getElementById('salt-amount');
-    const sugarElement = document.getElementById('sugar-amount');
-    const pepperElement = document.getElementById('pepper-amount');
-    const juniperElement = document.getElementById('juniper-amount');
-    const spiceElement = document.getElementById('spice-amount');
-    const laurelElement = document.getElementById('laurel-amount');
+      // Vérifie si les éléments existent avant de les manipuler
+      const elementSel = document.getElementById('quantite-sel');
+      const elementSucre = document.getElementById('quantite-sucre');
+      const elementPoivre = document.getElementById('quantite-poivre');
+      const elementGenievre = document.getElementById('quantite-genievre');
+      const elementEpices = document.getElementById('quantite-epices');
+      const elementLaurier = document.getElementById('quantite-laurier');
 
-    if (saltElement) saltElement.textContent = `${saltAmount.toFixed(2)} g`;
-    if (sugarElement) sugarElement.textContent = `${sugarAmount.toFixed(2)} g`;
-    if (pepperElement) pepperElement.textContent = `${pepperAmount} g`;
-    if (juniperElement) juniperElement.textContent = `${juniperAmount} g`;
-    if (spiceElement) spiceElement.textContent = `${spiceAmount} g`;
-    if (laurelElement) laurelElement.textContent = `${laurelAmount} g`;
+      if (elementSel) elementSel.textContent = `${quantiteSel.toFixed(2)} g`;
+      if (elementSucre) elementSucre.textContent = `${quantiteSucre.toFixed(2)} g`;
+      if (elementPoivre) elementPoivre.textContent = `${quantitePoivre} g`;
+      if (elementGenievre) elementGenievre.textContent = `${quantiteGenievre} g`;
+      if (elementEpices) elementEpices.textContent = `${quantiteEpices} g`;
+      if (elementLaurier) elementLaurier.textContent = `${quantiteLaurier} g`;
 
-    // Affiche la zone des résultats en retirant la classe "hidden"
-    document.getElementById('recipe').classList.remove('hidden');
-  });
+      // Affiche la zone des résultats en retirant la classe "masque"
+      const recette = document.getElementById('recette');
+      if (recette) {
+        recette.classList.remove('masque');
+      }
+    });
+  } else {
+    console.error('Le formulaire avec l\'ID "formulaire-calcul" est introuvable.');
+  }
 });

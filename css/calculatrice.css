@@ -1,5 +1,5 @@
 /* Conteneur principal avec ambiance rustique */
-.calculator-card {
+.carte-calculatrice {
   width: 100%;
   max-width: 600px;
   margin: 40px auto;
@@ -16,10 +16,8 @@
   background-attachment: fixed; /* Garder l'image de fond fixe */
 }
 
-/* Reste du CSS inchangé */
-
 /* Titre rustique */
-.calculator-card h2 {
+.carte-calculatrice h2 {
   text-align: center;
   font-size: 2em;
   color: #5a3d2b; /* Marron chaud */
@@ -28,12 +26,12 @@
 }
 
 /* Groupes de champs du formulaire */
-.calculator-card .form-group {
+.groupe-formulaire {
   margin-bottom: 20px;
 }
 
 /* Labels avec une touche rustique */
-.calculator-card .form-group label {
+.groupe-formulaire label {
   display: block;
   font-size: 1em;
   color: #7a5c48; /* Brun moyen */
@@ -42,8 +40,8 @@
 }
 
 /* Champs de saisie et menu déroulant */
-.calculator-card .form-group input,
-.calculator-card .form-group select {
+.groupe-formulaire input,
+.groupe-formulaire select {
   width: 100%;
   padding: 10px 12px;
   font-size: 1em;
@@ -55,15 +53,15 @@
 }
 
 /* Champs de saisie et menu déroulant au focus */
-.calculator-card .form-group input:focus,
-.calculator-card .form-group select:focus {
+.groupe-formulaire input:focus,
+.groupe-formulaire select:focus {
   border-color: #8b5e3c;
   box-shadow: 0 0 5px rgba(139, 94, 60, 0.3);
   outline: none;
 }
 
 /* Bouton de calcul avec style rustique */
-.calculator-card button {
+.btn-principal {
   width: 100%;
   padding: 12px;
   border: none;
@@ -77,13 +75,13 @@
   margin-top: 10px;
 }
 
-.calculator-card button:hover {
+.btn-principal:hover {
   background-color: #7a5230;
   transform: translateY(-2px);
 }
 
 /* Zone d'affichage des résultats */
-.calculator-card .recipe {
+#recette {
   margin-top: 30px;
   padding: 20px;
   background-color: #fff8f0;
@@ -92,17 +90,38 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.result-card p {
+#recette p {
   font-size: 1.1em;
   margin: 10px 0;
   color: #5a3d2b;
 }
 
-.result-card strong {
+#recette strong {
   color: #7a5230;
 }
 
 /* Masquer la zone de résultats par défaut */
-.hidden {
+.masque {
   display: none;
+}
+
+/* Bouton de retour */
+.conteneur-bouton-retour {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.bouton-retour {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #5a3d2b;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.bouton-retour:hover {
+  background-color: #7a5230;
 }
