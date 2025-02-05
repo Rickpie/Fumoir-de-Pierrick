@@ -74,7 +74,7 @@ body {
 /* Mobile responsive - menu burger */
 @media (max-width: 768px) {
     .navbar .navbar-menu {
-        display: none; /* Masquer le menu sur mobile */
+        display: none; /* Masquer le menu sur mobile par défaut */
         position: absolute;
         top: 60px; /* Positionne le menu sous la navbar */
         left: 0;
