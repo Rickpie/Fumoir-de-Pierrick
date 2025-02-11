@@ -1,25 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Détecte le dossier racine du projet sur GitHub Pages ou en local
-  let paths = window.location.pathname.split("/").filter((path) => path !== "");
-  let repoName =
-    paths.length > 0 && window.location.hostname.includes("github.io")
-      ? `/${paths[0]}/`
-      : "/";
-
-  // Charger le header
-  fetch(`${repoName}header/header.html`)
+  // Charger le header depuis la racine du site
+  fetch("/header/header.html")
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("header").innerHTML = data;
 
-      // Une fois le header chargé, corriger les liens
+      // Menu hamburger pour les petits écrans
+      const menuToggle = document.getElementById('menu-toggle');
+      if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+          const navbarLinks = document.getElementById('navbar-links');
+          if (navbarLinks) {
+            navbarLinks.classList.toggle('active');
+          }
+        });
+      }
+
+      // Corriger les liens dans le header pour utiliser des chemins absolus
       let navLinks = document.querySelectorAll(
         "#header .navbar-links a, #header .navbar-brand"
       );
       navLinks.forEach((link) => {
         let href = link.getAttribute("href");
         if (href && !href.startsWith("http") && !href.startsWith("#")) {
-          link.setAttribute("href", repoName + href);
+          // Préfixe avec "/" pour un chemin absolu
+          link.setAttribute("href", "/" + href);
         }
       });
 
@@ -28,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (bannerImg) {
         let src = bannerImg.getAttribute("src");
         if (src && !src.startsWith("http")) {
-          bannerImg.setAttribute("src", repoName + src);
+          bannerImg.setAttribute("src", "/" + src);
         }
       }
     })
@@ -36,8 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Erreur lors du chargement du header:", error);
     });
 
-  // Charger le footer
-  fetch(`${repoName}footer/footer.html`)
+  // Charger le footer depuis la racine du site
+  fetch("/footer/footer.html")
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("footer").innerHTML = data;

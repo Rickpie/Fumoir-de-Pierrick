@@ -1,82 +1,108 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <!-- DEBUT DU HEAD -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fumoir de Pierrick</title>
-  <link href="css/design.css" rel="stylesheet" />
-  <link
-    rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
-  />
-  <link
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
+    <!-- DEBUT DU HEAD -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fumoir de Pierrick</title>
+    <link href="css/design.css" rel="stylesheet" />
 </head>
+
 <body>
-  <!-- Charger le header (navbar et bannière) -->
-  <div id="header"></div>
+    <!-- Charger le header (navbar et bannière) -->
+    <div id="header"></div>
+    <div class="main-container">
+        <div class="lecture-container">
+            <h1>Bienvenue sur le site du fumoir de Pierrick</h1>
+            <hr />
+            <p>Que vous soyez novice ou passionné, vous trouverez ici tout ce qu'il faut pour vous lancer dans le fumage
+                à froid.
+                Conseils pratiques, recettes détaillées, techniques de salage et de séchage… ce site est conçu pour vous
+                guider à chaque étape.</p>
 
-  <div class="card-container">
-    <!-- Card conseil -->
-    <a href="home_menu/conseils/conseil_index.html" class="card-link">
-        <div class="card">
-            <div class="card-image-container">
-                <img class="card-img" src="images/conseil.png" alt="Image 1">
-            </div>
-            <div class="card-content">
-                <h3 class="card-title">Mes conseils</h3>
-                <p class="card-description">Mes différents conseils à propos du Salage, du fumage, du séchage.</p>
+            <p>Mon objectif est de partager mon expérience pour aider les débutants à éviter les erreurs courantes et à
+                réussir leurs préparations.
+                Du choix des aliments aux astuces de conservation, vous découvrirez ici toutes les clés pour fumer et
+                sublimer viandes, poissons, fromages et bien plus encore.</p>
+        </div>
+        <div class="lecture-content">
+            <div class="card-container">
+                <!-- Card Premiere fois -->
+                <a href="home_menu/conseils/premiere/premiere.html" class="card-link">
+                    <div class="card">
+                        <div class="card-image-container">
+                            <img class="card-img" src="images/1erfois.jpg" alt="Image 1">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Première fois : Découvrez les bases du fumage à froid</h3>
+                            <p class="card-description">Tu n’as jamais fumé à froid ? Pas de panique, ici on te guide simplement, sans prise de tête. Découvre les bases du fumage à froid avec des étapes claires et faciles, pour que tu puisses commencer sereinement et obtenir un résultat parfait dès ta première fois.</p>                 
+                        </div>
+                    </div>
+                </a>
+                <!-- Card conseil -->
+                <a href="home_menu/conseils/conseil_index.html" class="card-link">
+                    <div class="card">
+                        <div class="card-image-container">
+                            <img class="card-img" src="images/conseil.png" alt="Image 1">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Le processus complet</h3>
+                            <p class="card-description">Découvrez toutes les étapes essentielles : du salage à l'affinage, en passant par le fumage,  
+                               pour réussir vos préparations de viandes, poissons et autres aliments.</p>                            
+                        </div>
+                    </div>
+                </a>
+                <!-- Card fumoir -->
+                <a href="home_menu/fumoir/fumoir_index.html" class="card-link">
+                    <div class="card">
+                        <div class="card-image-container">
+                            <img class="card-img" src="images/fumoir.jpg" alt="Image 2">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Le fumoir</h3>
+                            <p class="card-description">Découvrez tout sur le fumoir : de sa construction en DIY aux ustensiles essentiels,  
+                               sans oublier le choix de la sciure pour un fumage optimal.</p>
+                        </div>
+                    </div>
+                </a>
+                <!-- Card recettes -->
+                <a href="home_menu/recettes/recettes_index.html" class="card-link">
+                    <div class="card">
+                        <div class="card-image-container">
+                            <img class="card-img" src="images/recette.jpg" alt="Image 3">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Idée de recette</h3>
+                            <p class="card-description">Retrouvez ici une multitude de recettes, pour de la viande, des
+                                poissons, des fromages et beaucoup d'autres aliments que vous pourrez sublimer avec
+                                votre fumoir.</p>
+                        </div>
+                    </div>
+                </a>
+                <!-- Card outils -->
+                <a href="home_menu/outils/outils_index.html" class="card-link">
+                    <div class="card">
+                        <div class="card-image-container">
+                            <img class="card-img" src="images/outils.jpg" alt="Image 3">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Outils</h3>
+                            <p class="card-description">Accédez à des calculateurs et des outils pratiques pour
+                                maîtriser le fumage à froid.
+                                Dosage du sel, temps de fumage, affinage… Tout est là pour vous aider à réussir vos
+                                préparations en toute simplicité !</p>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
-    </a>
-
-    <!-- Card fumoir -->
-    <a href="home_menu/fumoir/fumoir_index.html" class="card-link">
-        <div class="card">
-            <div class="card-image-container">
-                <img class="card-img" src="images/fumoir.jpg" alt="Image 2">
-            </div>
-            <div class="card-content">
-                <h3 class="card-title">Le fumoir</h3>
-                <p class="card-description">Ici je parlerai du fumoir, de sa réalisation DIY, aux ustensiles indispensables, en passant par la sciure.</p>
-            </div>
-        </div>
-    </a>
-
-    <!-- Card recettes -->
-    <a href="home_menu/recettes/recettes_index.html" class="card-link">
-        <div class="card">
-            <div class="card-image-container">
-                <img class="card-img" src="images/recette.jpg" alt="Image 3">
-            </div>
-            <div class="card-content">
-                <h3 class="card-title">Idée de recette</h3>
-                <p class="card-description">Retrouvez ici une multitude de recettes, pour de la viande, des poissons, des fromages et beaucoup d'autres aliments que vous pourrez sublimer avec votre fumoir.</p>
-            </div>
-        </div>
-    </a>
-<!-- Card outils -->
-    <a href="home_menu/outils/outils_index.html" class="card-link">
-        <div class="card">
-            <div class="card-image-container">
-                <img class="card-img" src="images/outils.jpg" alt="Image 3">
-            </div>
-            <div class="card-content">
-                <h3 class="card-title">Outils</h3>
-                <p class="card-description">Retrouvez des calculatrices et des aides afin d'arriver, </p>
-            </div>
-        </div>
-    </a>
-    
-</div>
-  <!-- Charger le footer -->
-  <div id="footer"></div>
-
-  <!-- Charger le script JS -->
-  <script src="js/script.js"></script>
+    </div>
+    <!-- Charger le footer -->
+    <div id="footer"></div>
+    <!-- Charger le script JS -->
+    <script src="js/script.js"></script>
 </body>
+
 </html>

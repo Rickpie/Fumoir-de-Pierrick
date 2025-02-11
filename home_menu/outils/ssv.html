@@ -10,56 +10,51 @@
   <link href="../../css/design.css" rel="stylesheet" />
   <link href="../../css/lecture.css" rel="stylesheet" />
   <link href="../../css/calculatrice.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    /* Classe pour masquer la zone des résultats */
-    .masque {
-      display: none;
-    }
-  </style>
 </head>
 
 <body>
   <div id="header"></div>
-  <!-- Carte de la calculatrice -->
-  <div class="carte-calculatrice">
-    <h2>Calculatrice de Salaison Sous Vide</h2>
-    <form id="formulaire-calcul">
-      <div class="groupe-formulaire">
-        <label for="poids">Poids de la viande (en grammes) :</label>
-        <input type="number" id="poids" name="poids" min="1" value="1000" required />
+  <div class="main-container">
+    <!-- Carte de la calculatrice -->
+    <div class="carte-calculatrice">
+      <h2>Calculatrice de Salaison Sous Vide</h2>
+      <form id="formulaire-calcul">
+        <div class="groupe-formulaire">
+          <label for="poids">Poids de la viande (en grammes) :</label>
+          <input type="number" id="poids" name="poids" min="1" value="1000" required />
+        </div>
+        <div class="groupe-formulaire">
+          <label for="sel">Pourcentage de sel (%) :</label>
+          <select id="sel" name="sel" required>
+            <option value="3">3%</option>
+            <option value="3.5">3.5%</option>
+            <option value="4">4%</option>
+            <option value="4.5" selected>4.5%</option>
+            <option value="5">5%</option>
+            <option value="5.5">5.5%</option>
+            <option value="6">6%</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-principal">Calculer</button>
+      </form>
+      <div id="recette" class="mt-3 masque">
+        <p><strong>Sel :</strong> <span id="quantite-sel">0.00 g</span></p>
+        <p><strong>Sucre :</strong> <span id="quantite-sucre">0.00 g</span></p>
+        <p><strong>Poivre :</strong> <span id="quantite-poivre">1 g</span></p>
+        <p><strong>Genièvre :</strong> <span id="quantite-genievre">1 g</span></p>
+        <p><strong>Épices :</strong> <span id="quantite-epices">0.5 g</span></p>
+        <p><strong>Laurier :</strong> <span id="quantite-laurier">0.3 g</span></p>
       </div>
-      <div class="groupe-formulaire">
-        <label for="sel">Pourcentage de sel (%) :</label>
-        <select id="sel" name="sel" required>
-          <option value="3">3%</option>
-          <option value="3.5">3.5%</option>
-          <option value="4">4%</option>
-          <option value="4.5" selected>4.5%</option>
-          <option value="5">5%</option>
-          <option value="5.5">5.5%</option>
-          <option value="6">6%</option>
-        </select>
-      </div>
-      <button type="submit" class="btn btn-principal">Calculer</button>
-    </form> 
-    <div id="recette" class="mt-3 masque">
-      <p><strong>Sel :</strong> <span id="quantite-sel">0.00 g</span></p>
-      <p><strong>Sucre :</strong> <span id="quantite-sucre">0.00 g</span></p>
-      <p><strong>Poivre :</strong> <span id="quantite-poivre">1 g</span></p>
-      <p><strong>Genièvre :</strong> <span id="quantite-genievre">1 g</span></p>
-      <p><strong>Épices :</strong> <span id="quantite-epices">0.5 g</span></p>
-      <p><strong>Laurier :</strong> <span id="quantite-laurier">0.3 g</span></p>
+    </div>
+    <!-- Bouton de retour -->
+    <div class="return-button-container">
+      <a href="javascript:history.back()" class="return-button">Retour</a>
     </div>
   </div>
-
-  <div class="conteneur-bouton-retour">
-    <a href="javascript:history.back()" class="bouton-retour">Retour</a>
-  </div>
-
+  <!-- Footer -->
   <div id="footer"></div>
-  <script src="../../js/script.js"></script>
+  <!-- Inclusion du fichier JavaScript -->
+  <script src="../../../js/script.js"></script>
   <script src="../../js/calculatrice.js"></script>
 </body>
 
