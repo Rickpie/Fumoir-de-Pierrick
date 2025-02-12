@@ -435,7 +435,7 @@ body, html {
     }
 }
 
-/* Styles pour les dropdowns */
+/* --- Dropdowns communs --- */
 .navbar-links .dropdown {
     position: relative;
 }
@@ -465,15 +465,10 @@ body, html {
     padding: 5px 10px;
 }
 
-/* Affichage du menu au survol */
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-/* Amélioration de la flèche */
+/* Flèche dans le lien du dropdown */
 .dropdown > a {
     position: relative;
-    padding-right: 20px; /* Laisse de l'espace pour la flèche */
+    padding-right: 20px; /* Espace pour la flèche */
     display: flex;
     align-items: center;
 }
@@ -481,33 +476,67 @@ body, html {
 .dropdown > a::after {
     content: "";
     position: absolute;
-    right: 5px; /* Ajuste la position */
+    right: 5px; /* Positionnement de la flèche */
     top: 50%;
     width: 6px;
     height: 6px;
-    border-left: 2px solid #FF5722; /* Adapté au fond clair */
+    border-left: 2px solid #FF5722;
     border-bottom: 2px solid #FF5722;
     transform: translateY(-50%) rotate(-45deg);
     transition: transform 0.2s ease;
 }
 
-/* Pour le menu mobile */
-@media (max-width: 768px) {
-    .dropdown-menu {
-        position: static;
-        display: none;
-        width: 100%;
+/* --- Styles Desktop --- */
+@media (min-width: 769px) {
+    /* La navbar est toujours visible en desktop */
+    .navbar-links {
+        display: flex;
     }
-
-    .dropdown.active .dropdown-menu {
+    
+    /* Le bouton hamburger n'est pas affiché en desktop */
+    .menu-toggle {
+        display: none;
+    }
+    
+    /* Affichage du dropdown par hover sur desktop */
+    .dropdown:hover .dropdown-menu {
         display: block;
     }
 }
 
-.navbar-links {
-    display: none;
-}
-
-.navbar-links.active {
-    display: block;
+/* --- Styles Mobile --- */
+@media (max-width: 768px) {
+    /* La navbar est cachée par défaut sur mobile */
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #333; /* Ajuste la couleur de fond selon ton design */
+        /* Tu peux ajouter ici d'autres styles pour le menu mobile */
+    }
+    
+    /* Quand la classe active est ajoutée, le menu s'affiche */
+    .navbar-links.active {
+        display: block;
+    }
+    
+    /* Le bouton hamburger est visible sur mobile */
+    .menu-toggle {
+        display: block;
+    }
+    
+    /* Sur mobile, le dropdown doit se gérer par clic :
+       le contenu du dropdown est positionné de façon statique */
+    .dropdown-menu {
+        position: static;
+        display: none;
+        width: 100%;
+        border: none; /* Optionnel : enlever la bordure si nécessaire */
+    }
+    
+    /* Quand le dropdown a la classe active, son menu s'affiche */
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
 }
