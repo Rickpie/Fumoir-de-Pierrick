@@ -25,13 +25,13 @@ document.addEventListener("DOMContentLoaded", function () {
           headerEl.innerHTML = data;
           console.log("Header injecté dans le DOM.");
 
-          // Appeler adjustLinks pour corriger les liens et les images
+          // Ajuster les liens et images du header
           adjustLinks(repoName);
 
           // Attacher le gestionnaire pour le menu hamburger après injection du header
           const menuToggle = document.getElementById("menu-toggle");
           const navbarLinks = document.getElementById("navbar-links");
-
+          console.log("Vérification des éléments du menu hamburger...");
           if (menuToggle && navbarLinks) {
               console.log("menu-toggle et navbar-links trouvés.");
               menuToggle.addEventListener("click", function () {
@@ -44,6 +44,27 @@ document.addEventListener("DOMContentLoaded", function () {
               if (!menuToggle) console.error("Element 'menu-toggle' non trouvé !");
               if (!navbarLinks) console.error("Element 'navbar-links' non trouvé !");
           }
+
+          // Gestion des dropdowns sur mobile : double comportement
+          // Sur mobile, au premier clic, on empêche la navigation et on ouvre le dropdown.
+          // Si le dropdown est déjà ouvert, le second clic permet la navigation.
+          console.log("Initialisation du gestionnaire pour les liens parent des dropdowns (mobile)...");
+          document.querySelectorAll(".dropdown > a").forEach((anchor) => {
+              anchor.addEventListener("click", function (e) {
+                  if (window.innerWidth <= 768) {
+                      const parentDropdown = this.parentElement;
+                      if (!parentDropdown.classList.contains("open")) {
+                          // Premier clic : on empêche la navigation et on ouvre le dropdown
+                          e.preventDefault();
+                          parentDropdown.classList.add("open");
+                          console.log("Ouverture du dropdown :", parentDropdown);
+                      } else {
+                          // Dropdown déjà ouvert, on laisse la navigation se faire (ou on peut choisir de fermer le dropdown)
+                          console.log("Dropdown déjà ouvert, navigation autorisée :", parentDropdown);
+                      }
+                  }
+              });
+          });
       })
       .catch((error) => {
           console.error("Erreur lors du chargement du header :", error);
@@ -69,24 +90,27 @@ document.addEventListener("DOMContentLoaded", function () {
           console.error("Erreur lors du chargement du footer :", error);
       });
 
-  // Gérer les dropdowns (ces éléments doivent être déjà dans le DOM dans le header injecté)
-  console.log("Initialisation des dropdowns...");
+  // Gérer les dropdowns pour tous les écrans (gestion du hover pour desktop et clic sur le conteneur pour mobile)
+  console.log("Initialisation des dropdowns (général)...");
   document.querySelectorAll(".dropdown").forEach((dropdown) => {
       dropdown.addEventListener("mouseenter", () => {
-          console.log("Dropdown survolé (mouseenter) :", dropdown);
-          dropdown.classList.add("open");
+          if (window.innerWidth > 768) { // uniquement sur desktop
+              console.log("Dropdown survolé (mouseenter) :", dropdown);
+              dropdown.classList.add("open");
+          }
       });
       dropdown.addEventListener("mouseleave", () => {
-          console.log("Dropdown quitté (mouseleave) :", dropdown);
-          dropdown.classList.remove("open");
+          if (window.innerWidth > 768) { // uniquement sur desktop
+              console.log("Dropdown quitté (mouseleave) :", dropdown);
+              dropdown.classList.remove("open");
+          }
       });
-      // Pour les écrans mobiles, activer le dropdown au clic
+      // Optionnel : gestion supplémentaire du clic sur le conteneur sur mobile
       dropdown.addEventListener("click", (event) => {
           if (window.innerWidth <= 768) {
-              console.log("Clic sur dropdown (mobile) :", dropdown);
+              console.log("Clic sur dropdown (mobile, conteneur) :", dropdown);
+              // On peut décider d'empêcher le clic sur le conteneur s'il n'est pas déjà géré par le lien
               event.preventDefault();
-              dropdown.classList.toggle("open");
-              console.log("État du dropdown après clic :", dropdown.classList.toString());
           }
       });
   });
