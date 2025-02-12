@@ -21,11 +21,15 @@ body, html {
     margin: 0 auto;
     padding: 0 15px;
     box-sizing: border-box;
+    overflow-x: hidden; /* Empêche le débordement horizontal */
+    word-wrap: break-word; /* Évite que du texte long ne dépasse */
 }
 
 @media screen and (max-width: 768px) {
     .main-container {
         max-width: 100%;
+        width: 100%; /* Prend toute la largeur disponible */
+        padding: 0 10px; /* Légère réduction du padding pour éviter le rognage */
     }
 }
 
@@ -65,7 +69,7 @@ body, html {
 
 /* Menu hamburger */
 .menu-toggle {
-    display: none;
+    display: none; /* Cacher par défaut */
     background: none;
     border: none;
     color: white;
@@ -98,9 +102,28 @@ body, html {
     }
 
     .menu-toggle {
-        display: block;
+        display: block; /* Affiche le bouton hamburger en mobile */
+    }
+
+    /* Gestion du dropdown dans le menu mobile */
+    .navbar-links .dropdown-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar-links .dropdown.active .dropdown-menu {
+        display: flex;
+    }
+
+    .navbar-links .dropdown-menu li {
+        text-align: center;
+        padding: 10px 0;
     }
 }
+
 
 /* Bannière */
 #banniere {
@@ -410,4 +433,81 @@ body, html {
     #footer {
         font-size: 0.875rem;
     }
+}
+
+/* Styles pour les dropdowns */
+.navbar-links .dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+}
+
+.dropdown-menu li a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+}
+
+/* Affichage du menu au survol */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Amélioration de la flèche */
+.dropdown > a {
+    position: relative;
+    padding-right: 20px; /* Laisse de l'espace pour la flèche */
+    display: flex;
+    align-items: center;
+}
+
+.dropdown > a::after {
+    content: "";
+    position: absolute;
+    right: 5px; /* Ajuste la position */
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    border-left: 2px solid #FF5722; /* Adapté au fond clair */
+    border-bottom: 2px solid #FF5722;
+    transform: translateY(-50%) rotate(-45deg);
+    transition: transform 0.2s ease;
+}
+
+/* Pour le menu mobile */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        display: none;
+        width: 100%;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+}
+
+.navbar-links {
+    display: none;
+}
+
+.navbar-links.active {
+    display: block;
 }
