@@ -543,3 +543,21 @@ body, html {
         display: block;
     }
 }
+
+/* Style pour centrer le texte */
+.image-avec-texte {
+    text-align: center; /* centre le texte */
+    margin: 10px;       /* espace autour du bloc */
+}
+
+.image-avec-texte img {
+    max-width: 450px;   /* largeur de l'image */
+    height: auto;       /* garde les proportions */
+    display: block;     /* évite que l'image et le texte soient côte à côte */
+    margin: 0 auto;     /* centre l'image */
+}
+
+.image-avec-texte p {
+    margin-top: 5px;    /* espace entre l'image et le texte */
+    font-weight: bold;  /* texte en gras (optionnel) */
+}
