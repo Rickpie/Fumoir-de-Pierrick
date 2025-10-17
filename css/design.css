@@ -551,7 +551,7 @@ body, html {
 }
 
 .image-avec-texte img {
-    max-width: 450px;   /* largeur de l'image */
+    max-width: 350px;   /* largeur de l'image */
     height: auto;       /* garde les proportions */
     display: block;     /* évite que l'image et le texte soient côte à côte */
     margin: 0 auto;     /* centre l'image */
